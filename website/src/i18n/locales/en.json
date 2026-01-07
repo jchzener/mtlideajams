@@ -18,12 +18,6 @@
       "title": "Past conversations included",
       "viewAll": "View all past Jams"
     },
-    "jamDetail": {
-      "theme": "Theme",
-      "quote": "Key Quote",
-      "description": "Description",
-      "backToAll": "Back to all Jams"
-    },
     "why": {
       "title": "Why MIJ exists",
       "description": "Most entrepreneurial communities optimize for visibility and speed. We optimize for thinking."
@@ -49,5 +43,19 @@
     "title": "Past Montreal Idea Jams",
     "subtitle": "18 months of honest conversations with founders, operators, and builders who’ve walked the entrepreneurial path.",
     "backToHome": "Back to upcoming Jams"
+  },
+  "jamDetail": {
+    "theme": "Theme",
+    "quote": "Key Quote",
+    "description": "Description",
+    "backToAll": "Back to all Jams",
+    "header": {
+      "backToAll": "All Past Jams"
+    },
+    "notFound": {
+      "title": "Jam not found",
+      "description": "The requested session could not be found. Please check the URL or browse our archives.",
+      "back": "Back to all Jams"
+    }
   }
 }

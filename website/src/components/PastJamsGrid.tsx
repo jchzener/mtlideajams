@@ -3,6 +3,7 @@
 import { useTranslation } from "react-i18next";
 import JamCard from "./JamCard";
 import { pastJams } from "../data/pastJams";
+import { Link } from "react-router-dom";
 
 export default function PastJamsSection() {
   const { t } = useTranslation();
@@ -13,7 +14,9 @@ export default function PastJamsSection() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {pastJams.map((jam) => (
-          <JamCard key={jam.id} jam={jam} />
+          <Link key={jam.id} to={`/jams/${jam.id}`} className="group block">
+            <JamCard jam={jam} />
+          </Link>
         ))}
       </div>
     </section>

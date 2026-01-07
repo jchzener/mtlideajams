@@ -18,12 +18,6 @@
       "title": "Parmi nos invité·es précédents",
       "viewAll": "Voir toutes les Jams passées"
     },
-    "jamDetail": {
-      "theme": "Thème",
-      "quote": "Citation clé",
-      "description": "Description",
-      "backToAll": "Retour à toutes les Jams"
-    },
     "why": {
       "title": "Pourquoi Montreal Idea Jams existe",
       "description": "La plupart des communautés entrepreneuriales misent sur la visibilité et la vitesse. Nous, on mise sur la réflexion."
@@ -49,5 +43,19 @@
     "title": "Archives : Montreal Idea Jams",
     "subtitle": "18 mois de conversations sincères avec des fondatrices, opérateurs et bâtisseurs qui ont emprunté le chemin de l’entrepreneuriat.",
     "backToHome": "Retour aux prochaines Jams"
+  },
+  "jamDetail": {
+    "theme": "Thème",
+    "quote": "Citation clé",
+    "description": "Description",
+    "backToAll": "Retour à toutes les Jams",
+    "header": {
+      "backToAll": "Toutes les Jams passées"
+    },
+    "notFound": {
+      "title": "Jam introuvable",
+      "description": "La session demandée n’a pas été trouvée. Veuillez vérifier l’URL ou parcourir nos archives.",
+      "back": "Retour à toutes les Jams"
+    }
   }
 }
