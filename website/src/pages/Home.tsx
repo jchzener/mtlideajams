@@ -57,7 +57,9 @@ export default function Home() {
           <img
             src={heroImg}
             alt={t("home.hero.imageAlt")}
-            className="rounded-3xl object-cover w-full h-full"
+            className="rounded-2xl md:rounded-3xl object-cover w-full
+           shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1)]
+           border border-stone-200"
           />
         </div>
       </section>
@@ -119,7 +121,9 @@ export default function Home() {
         <img
           src={convoImg}
           alt={t("home.convoImageAlt")}
-          className="rounded-3xl w-full object-cover"
+          className="rounded-2xl md:rounded-3xl object-cover w-full
+           shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1)]
+           border border-stone-200"
         />
       </section>
 
@@ -141,7 +145,9 @@ export default function Home() {
         <img
           src={peopleImg}
           alt={t("home.peopleImageAlt")}
-          className="rounded-3xl w-full object-cover"
+          className="rounded-2xl md:rounded-3xl object-cover w-full
+           shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1)]
+           border border-stone-200"
         />
       </section>
 
