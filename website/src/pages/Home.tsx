@@ -41,7 +41,12 @@ export default function Home() {
           </h1>
           <p className="text-stone-600 mb-8 mt-4">{t("home.hero.subtitle")}</p>
 
-          <button className="bg-black text-white px-6 py-3 rounded-full text-sm hover:opacity-90 transition">
+          <button
+            className="px-6 py-3 bg-stone-900 text-white rounded-xl text-sm 
+           hover:bg-stone-800 transition 
+           active:translate-y-px 
+           focus:outline-none focus:ring-2 focus:ring-stone-500"
+          >
             {t("home.hero.cta")}
           </button>
 
@@ -90,7 +95,12 @@ export default function Home() {
         </div>
 
         <div className="mt-8">
-          <button className="bg-black text-white px-6 py-3 rounded-full text-sm hover:opacity-90 transition">
+          <button
+            className="px-6 py-3 bg-stone-900 text-white rounded-xl text-sm 
+           hover:bg-stone-800 transition 
+           active:translate-y-px 
+           focus:outline-none focus:ring-2 focus:ring-stone-500"
+          >
             {t("home.nextJam.cta")}
           </button>
         </div>
@@ -150,7 +160,12 @@ export default function Home() {
           {t("home.finalCta.title")}
         </h2>
 
-        <button className="bg-black text-white px-8 py-4 rounded-full text-sm hover:opacity-90 transition">
+        <button
+          className="px-6 py-3 bg-stone-900 text-white rounded-xl text-sm 
+           hover:bg-stone-800 transition 
+           active:translate-y-px 
+           focus:outline-none focus:ring-2 focus:ring-stone-500"
+        >
           {t("home.finalCta.cta")}
         </button>
       </section>

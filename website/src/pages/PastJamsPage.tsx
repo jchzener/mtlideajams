@@ -40,7 +40,10 @@ export default function PastJamsPage() {
       <section className="max-w-7xl mx-auto px-6 py-16 text-center">
         <Link
           to="/"
-          className="inline-block bg-stone-900 text-white px-6 py-3 rounded-xl text-sm hover:bg-stone-800 transition"
+          className="px-6 py-3 bg-stone-900 text-white rounded-xl text-sm 
+           hover:bg-stone-800 transition 
+           active:translate-y-px 
+           focus:outline-none focus:ring-2 focus:ring-stone-500"
         >
           {t("pastJams.backToHome")}
         </Link>
