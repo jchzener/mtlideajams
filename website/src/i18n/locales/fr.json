@@ -14,24 +14,24 @@
       "speakerLabel": "Invité·e",
       "cta": "Réserver votre place"
     },
-    "past": {
-      "title": "Parmi nos invité·es précédents",
-      "viewAll": "Voir toutes les Jams passées"
-    },
     "why": {
       "title": "Pourquoi Montreal Idea Jams existe",
       "description": "La plupart des communautés entrepreneuriales misent sur la visibilité et la vitesse. Nous, on mise sur la réflexion."
     },
     "convoImageAlt": "Petit groupe en discussion pendant une Jam",
     "format": {
-      "title": "À quoi ressemble une Jam ?",
+      "title": "À quoi ressemble une Jam ?",
       "item1": "Un·e entrepreneur·e invité·e",
       "item2": "Des récits, des leçons apprises… et des surprises",
       "item3": "Des questions ouvertes et une discussion collective"
     },
     "peopleImageAlt": "Des gens qui discutent, pas qui présentent",
+    "past": {
+      "title": "Parmi nos invité·es précédents",
+      "viewAll": "Voir toutes les Jams passées"
+    },
     "who": {
-      "title": "À qui s’adresse l’événement ?",
+      "title": "À qui s’adresse l’événement ?",
       "description": "Aux personnes curieuses de l’entrepreneuriat et qui envisagent sérieusement de sauter le pas — ou qui l’ont déjà fait."
     },
     "finalCta": {

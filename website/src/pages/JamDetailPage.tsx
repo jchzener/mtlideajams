@@ -76,20 +76,24 @@ export default function JamDetailPage() {
 
       <section className="max-w-7xl mx-auto px-6 py-16">
         {/* Speaker header */}
-        <div className="flex items-start gap-6 mb-8">
-          <img
-            src={speakerPhoto}
-            alt={`${jam.speaker.name} - ${jam.speaker.title[lang]}`}
-            className="w-20 h-20 rounded-full object-cover border border-stone-200 shadow-sm"
-          />
-          <div>
-            <h1 className="font-serif text-3xl md:text-4xl">
-              {jam.speaker.name}
-            </h1>
-            <p className="text-stone-600 mt-1">{jam.speaker.title[lang]}</p>
-            <p className="text-xs text-stone-500 mt-1">
-              {jam.displayDate[lang]}
-            </p>
+        <div className="animate-fade-in-up">
+          <div className="flex items-start gap-6 mb-8">
+            <img
+              src={speakerPhoto}
+              alt={`${jam.speaker.name} - ${jam.speaker.title[lang]}`}
+              className="rounded-2xl md:rounded-3xl object-cover w-full
+           shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1)]
+           border border-stone-200"
+            />
+            <div>
+              <h1 className="font-serif text-3xl md:text-4xl">
+                {jam.speaker.name}
+              </h1>
+              <p className="text-stone-600 mt-1">{jam.speaker.title[lang]}</p>
+              <p className="text-xs text-stone-500 mt-1">
+                {jam.displayDate[lang]}
+              </p>
+            </div>
           </div>
         </div>
 

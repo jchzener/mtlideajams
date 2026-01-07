@@ -17,11 +17,22 @@ export default function JamCard({ jam }: JamCardProps) {
   // Fonction utilitaire pour obtenir le texte traduit
   const tText = (localized: { en: string; fr: string }) => localized[lang];
 
+  // Generate stable random tilt on mount (not on every render)
+  const tilt =
+    jam.id.endsWith("0") ||
+    jam.id.endsWith("2") ||
+    jam.id.endsWith("4") ||
+    jam.id.endsWith("6") ||
+    jam.id.endsWith("8")
+      ? "1deg"
+      : "-1deg";
+
   return (
     <div
-      className={`relative bg-white rounded-xl shadow-sm overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-md ${
+      className={`relative bg-white rounded-xl shadow-sm overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-md hover:-translate-y-1 ${
         isOpen ? "ring-2 ring-stone-900" : ""
       }`}
+      style={{ transform: `rotate(${tilt})` }}
       onClick={() => setIsOpen(!isOpen)}
     >
       {/* En-tête : nom, titre, date */}
@@ -48,7 +59,7 @@ export default function JamCard({ jam }: JamCardProps) {
 
       {/* Contenu détaillé (au clic) */}
       {isOpen && (
-        <div className="p-6 pt-4 bg-stone-50 border-t border-stone-200 animate-fadeIn">
+        <div className="p-6 pt-4 bg-stone-50 border-t border-stone-200 animate-fade-in-up">
           <p className="text-sm text-stone-600 mb-4">
             {tText(jam.description)}
           </p>
