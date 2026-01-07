@@ -1,8 +1,41 @@
 {
-  "hero": {
-    "title": "Montreal Idea Jams",
-    "subtitle": "A monthly conversation space for people seriously thinking about building something.",
-    "tagline": "Small. Curious. Honest.",
-    "cta": "Join the conversation"
+  "home": {
+    "hero": {
+      "title": "Monthly conversations for people serious about entrepreneurship.",
+      "subtitle": "No slides. No pitching. Just honest stories and discussions.",
+      "cta": "Join the next Jam",
+      "footer": "Montreal · In-person · Once a month",
+      "imageAlt": "People in conversation at Montreal Idea Jams"
+    },
+    "nextJam": {
+      "title": "Next Montreal Idea Jam",
+      "dateLabel": "Date",
+      "locationLabel": "Location",
+      "speakerLabel": "Speaker",
+      "cta": "Reserve your spot"
+    },
+    "why": {
+      "title": "Why MIJ exists",
+      "description": "Most entrepreneurial communities optimize for visibility and speed. We optimize for thinking."
+    },
+    "convoImageAlt": "Small group discussion during a Jam",
+    "format": {
+      "title": "What a Jam looks like",
+      "item1": "One guest entrepreneur",
+      "item2": "Stories, lessons, and surprises",
+      "item3": "Open questions and group discussion"
+    },
+    "peopleImageAlt": "People talking, not presenting",
+    "past": {
+      "title": "Past conversations included"
+    },
+    "who": {
+      "title": "Who should join",
+      "description": "People curious about entrepreneurship and seriously considering making the jump — or already in it."
+    },
+    "finalCta": {
+      "title": "Come for the conversation. Stay for the thinking.",
+      "cta": "Join the next Jam"
+    }
   }
 }

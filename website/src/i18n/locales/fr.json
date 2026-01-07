@@ -1,8 +1,41 @@
 {
-  "hero": {
-    "title": "Montreal Idea Jams",
-    "subtitle": "Un espace de discussion mensuel pour celles et ceux qui envisagent sérieusement de construire quelque chose.",
-    "tagline": "Petit. Curieux. Honnête.",
-    "cta": "Rejoindre la conversation"
+  "home": {
+    "hero": {
+      "title": "Des conversations mensuelles pour celles et ceux qui prennent l’entrepreneuriat au sérieux.",
+      "subtitle": "Pas de diapos. Pas de pitch. Juste des histoires vraies et des échanges sincères.",
+      "cta": "Participer à la prochaine Jam",
+      "footer": "Montréal · En personne · Une fois par mois",
+      "imageAlt": "Personnes en discussion lors d’une Montreal Idea Jam"
+    },
+    "nextJam": {
+      "title": "Prochaine Montreal Idea Jam",
+      "dateLabel": "Date",
+      "locationLabel": "Lieu",
+      "speakerLabel": "Invité·e",
+      "cta": "Réserver votre place"
+    },
+    "why": {
+      "title": "Pourquoi Montreal Idea Jams existe",
+      "description": "La plupart des communautés entrepreneuriales misent sur la visibilité et la vitesse. Nous, on mise sur la réflexion."
+    },
+    "convoImageAlt": "Petit groupe en discussion pendant une Jam",
+    "format": {
+      "title": "À quoi ressemble une Jam ?",
+      "item1": "Un·e entrepreneur·e invité·e",
+      "item2": "Des récits, des leçons apprises… et des surprises",
+      "item3": "Des questions ouvertes et une discussion collective"
+    },
+    "peopleImageAlt": "Des gens qui discutent, pas qui présentent",
+    "past": {
+      "title": "Parmi nos invité·es précédents"
+    },
+    "who": {
+      "title": "À qui s’adresse l’événement ?",
+      "description": "Aux personnes curieuses de l’entrepreneuriat et qui envisagent sérieusement de sauter le pas — ou qui l’ont déjà fait."
+    },
+    "finalCta": {
+      "title": "Venez pour la conversation.\nRestez pour la réflexion.",
+      "cta": "Participer à la prochaine Jam"
+    }
   }
 }

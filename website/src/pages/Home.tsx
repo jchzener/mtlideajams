@@ -1,91 +1,186 @@
-import React from "react";
+// src/pages/Home.tsx
+
+import heroImg from "../assets/images/mij-hero.jpg";
+import convoImg from "../assets/images/mij-conversation.jpg";
+import peopleImg from "../assets/images/mij-people.jpg";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+  const { t } = useTranslation();
+
+  // 👇 Tu peux déplacer ça dans un fichier de données plus tard (ex. : /data/jams.ts)
+  const nextJam = {
+    date: "January 27, 2026",
+    time: "6:30 PM – 8:30 PM",
+    location: "Café Névé – Plateau",
+    speaker: {
+      name: "Marie L.",
+      title: "Co-founder of CleanLoop",
+      quote:
+        "The biggest challenge wasn’t technical… it was believing my idea deserved to exist.",
+    },
+    ctaLink: "#",
+  };
+
+  const pastSpeakers = [
+    { role: "Founder, early-stage fintech" },
+    { role: "Ex-Stripe operator" },
+    { role: "Repeat SaaS founder" },
+    { role: "Product lead, Series B startup" },
+    { role: "Bootstrapped marketplace founder" },
+    { role: "Angel investor & operator" },
+  ];
+
   return (
-    <main className="bg-[#F7F6F3] text-neutral-900">
-      <div className="max-w-[1400px] mx-auto px-6 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-[30%_70%] gap-16">
-          {/* LEFT RAIL — 30% */}
-          <aside className="md:sticky md:top-20 self-start">
-            <p className="text-sm uppercase tracking-wide text-neutral-500 mb-6">
-              Montreal Idea Jams
-            </p>
+    <main className="bg-[#f7f6f3] text-neutral-900">
+      {/* HEADER */}
+      <header className="max-w-7xl mx-auto px-6 pt-6 flex items-center justify-between">
+        <span className="text-xs tracking-widest uppercase text-neutral-500">
+          Montreal Idea Jams
+        </span>
 
-            <h1 className="text-3xl font-medium leading-snug mb-6">
-              Monthly conversations for people serious about entrepreneurship.
-            </h1>
-
-            <p className="text-neutral-600 mb-10">
-              No slides. No pitching. Just honest stories and discussions.
-            </p>
-
-            <div className="space-y-4">
-              <a
-                href="#join"
-                className="block w-full text-center px-6 py-3 rounded-xl bg-neutral-900 text-white hover:bg-neutral-800 transition"
-              >
-                Join the next Jam
-              </a>
-
-              <p className="text-sm text-neutral-500">
-                Montreal · In-person · Once a month
-              </p>
-            </div>
-          </aside>
-
-          {/* EDITORIAL — 70% */}
-          <section className="space-y-20 text-lg leading-relaxed">
-            <section>
-              <h2 className="text-2xl font-medium mb-4">Why MIJ exists</h2>
-              <p className="text-neutral-700">
-                Most entrepreneurial communities optimize for visibility and
-                speed. We optimize for thinking.
-              </p>
-            </section>
-
-            {/* Photo break */}
-            <div className="rounded-3xl overflow-hidden">
-              <div className="h-[360px] bg-neutral-300 flex items-center justify-center text-neutral-500">
-                Photo from a past conversation
-              </div>
-            </div>
-
-            <section>
-              <p className="text-neutral-700">
-                Montreal Idea Jams is intentionally small, informal, and
-                conversation-driven. Each month, we invite an experienced
-                founder or operator to share what really happened.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-medium mb-4">
-                What a Jam looks like
-              </h2>
-              <ul className="space-y-3 text-neutral-700 list-disc pl-6">
-                <li>One guest entrepreneur</li>
-                <li>Stories, lessons, and surprises</li>
-                <li>Open questions and group discussion</li>
-              </ul>
-            </section>
-
-            {/* Another photo */}
-            <div className="rounded-3xl overflow-hidden">
-              <div className="h-[300px] bg-neutral-300 flex items-center justify-center text-neutral-500">
-                People talking, not presenting
-              </div>
-            </div>
-
-            <section id="join">
-              <h2 className="text-2xl font-medium mb-4">Who should join</h2>
-              <p className="text-neutral-700">
-                People curious about entrepreneurship and seriously considering
-                making the jump — or already in it.
-              </p>
-            </section>
-          </section>
+        <div className="text-xs text-neutral-400 space-x-2">
+          <button className="hover:text-neutral-900 transition">EN</button>
+          <span>/</span>
+          <button className="hover:text-neutral-900 transition">FR</button>
         </div>
-      </div>
+      </header>
+
+      {/* HERO */}
+      <section className="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <div className="lg:col-span-4">
+          <h1 className="font-serif text-4xl leading-tight">
+            {t("home.hero.title")}
+          </h1>
+          <p className="text-neutral-600 mb-8 mt-4">
+            {t("home.hero.subtitle")}
+          </p>
+
+          <button className="bg-black text-white px-6 py-3 rounded-full text-sm hover:opacity-90 transition">
+            {t("home.hero.cta")}
+          </button>
+
+          <p className="text-xs text-neutral-500 mt-4">
+            {t("home.hero.footer")}
+          </p>
+        </div>
+
+        <div className="lg:col-span-8">
+          <img
+            src={heroImg}
+            alt={t("home.hero.imageAlt")}
+            className="rounded-3xl object-cover w-full h-full"
+          />
+        </div>
+      </section>
+
+      {/* NEXT JAM */}
+      <section className="max-w-7xl mx-auto px-6 py-24 bg-white rounded-3xl shadow-sm">
+        <h2 className="font-serif text-2xl mb-6">{t("home.nextJam.title")}</h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 className="text-sm uppercase tracking-widest text-neutral-500 mb-2">
+              {t("home.nextJam.dateLabel")}
+            </h3>
+            <p className="text-lg font-medium">{nextJam.date}</p>
+            <p className="text-sm text-neutral-600">{nextJam.time}</p>
+          </div>
+
+          <div>
+            <h3 className="text-sm uppercase tracking-widest text-neutral-500 mb-2">
+              {t("home.nextJam.locationLabel")}
+            </h3>
+            <p className="text-lg font-medium">{nextJam.location}</p>
+          </div>
+
+          <div>
+            <h3 className="text-sm uppercase tracking-widest text-neutral-500 mb-2">
+              {t("home.nextJam.speakerLabel")}
+            </h3>
+            <p className="text-lg font-medium">{nextJam.speaker.name}</p>
+            <p className="text-sm text-neutral-600">{nextJam.speaker.title}</p>
+            <blockquote className="mt-3 text-sm italic text-neutral-700">
+              “{nextJam.speaker.quote}”
+            </blockquote>
+          </div>
+        </div>
+
+        <div className="mt-8">
+          <button className="bg-black text-white px-6 py-3 rounded-full text-sm hover:opacity-90 transition">
+            {t("home.nextJam.cta")}
+          </button>
+        </div>
+      </section>
+
+      {/* WHY MIJ EXISTS */}
+      <section className="max-w-5xl mx-auto px-6 py-24">
+        <h2 className="font-serif text-2xl">{t("home.why.title")}</h2>
+        <p className="text-neutral-600 text-lg mt-4">
+          {t("home.why.description")}
+        </p>
+      </section>
+
+      {/* IMAGE BREAK */}
+      <section className="max-w-7xl mx-auto px-6 pb-24">
+        <img
+          src={convoImg}
+          alt={t("home.convoImageAlt")}
+          className="rounded-3xl w-full object-cover"
+        />
+      </section>
+
+      {/* WHAT A JAM LOOKS LIKE */}
+      <section className="max-w-5xl mx-auto px-6 py-24">
+        <h2 className="text-2xl font-semibold mb-6">
+          {t("home.format.title")}
+        </h2>
+
+        <ul className="space-y-4 text-neutral-600">
+          <li>• {t("home.format.item1")}</li>
+          <li>• {t("home.format.item2")}</li>
+          <li>• {t("home.format.item3")}</li>
+        </ul>
+      </section>
+
+      {/* PEOPLE IMAGE */}
+      <section className="max-w-7xl mx-auto px-6 pb-24">
+        <img
+          src={peopleImg}
+          alt={t("home.peopleImageAlt")}
+          className="rounded-3xl w-full object-cover"
+        />
+      </section>
+
+      {/* PAST CONVERSATIONS */}
+      <section className="max-w-5xl mx-auto px-6 py-24">
+        <h3 className="text-sm uppercase tracking-widest text-neutral-500 mb-6">
+          {t("home.past.title")}
+        </h3>
+
+        <ul className="grid grid-cols-2 md:grid-cols-3 gap-y-4 text-neutral-700">
+          {pastSpeakers.map((speaker, index) => (
+            <li key={index}>{speaker.role}</li>
+          ))}
+        </ul>
+      </section>
+
+      {/* WHO SHOULD JOIN */}
+      <section className="max-w-5xl mx-auto px-6 py-24">
+        <h2 className="text-2xl font-semibold mb-4">{t("home.who.title")}</h2>
+        <p className="text-neutral-600 text-lg">{t("home.who.description")}</p>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="max-w-7xl mx-auto px-6 py-32 text-center bg-white rounded-3xl shadow-sm">
+        <h2 className="text-3xl font-semibold mb-6">
+          {t("home.finalCta.title")}
+        </h2>
+
+        <button className="bg-black text-white px-8 py-4 rounded-full text-sm hover:opacity-90 transition">
+          {t("home.finalCta.cta")}
+        </button>
+      </section>
     </main>
   );
 }
