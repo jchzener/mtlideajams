@@ -4,11 +4,11 @@ import heroImg from "../assets/images/mij-hero.jpg";
 import convoImg from "../assets/images/mij-conversation.jpg";
 import peopleImg from "../assets/images/mij-people.jpg";
 import { useTranslation } from "react-i18next";
+import LanguageToggle from "../components/LanguageToggle";
 
 export default function Home() {
   const { t } = useTranslation();
 
-  // 👇 Tu peux déplacer ça dans un fichier de données plus tard (ex. : /data/jams.ts)
   const nextJam = {
     date: "January 27, 2026",
     time: "6:30 PM – 8:30 PM",
@@ -38,12 +38,7 @@ export default function Home() {
         <span className="text-xs tracking-widest uppercase text-neutral-500">
           Montreal Idea Jams
         </span>
-
-        <div className="text-xs text-neutral-400 space-x-2">
-          <button className="hover:text-neutral-900 transition">EN</button>
-          <span>/</span>
-          <button className="hover:text-neutral-900 transition">FR</button>
-        </div>
+        <LanguageToggle />
       </header>
 
       {/* HERO */}
