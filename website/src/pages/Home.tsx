@@ -24,10 +24,10 @@ export default function Home() {
   };
 
   return (
-    <main className="bg-[#f7f6f3] text-neutral-900">
+    <main className="bg-stone-50 text-stone-900">
       {/* HEADER */}
       <header className="max-w-7xl mx-auto px-6 pt-6 flex items-center justify-between">
-        <span className="text-xs tracking-widest uppercase text-neutral-500">
+        <span className="text-xs tracking-widest uppercase text-stone-500">
           Montreal Idea Jams
         </span>
         <LanguageToggle />
@@ -39,17 +39,13 @@ export default function Home() {
           <h1 className="font-serif text-4xl leading-tight">
             {t("home.hero.title")}
           </h1>
-          <p className="text-neutral-600 mb-8 mt-4">
-            {t("home.hero.subtitle")}
-          </p>
+          <p className="text-stone-600 mb-8 mt-4">{t("home.hero.subtitle")}</p>
 
           <button className="bg-black text-white px-6 py-3 rounded-full text-sm hover:opacity-90 transition">
             {t("home.hero.cta")}
           </button>
 
-          <p className="text-xs text-neutral-500 mt-4">
-            {t("home.hero.footer")}
-          </p>
+          <p className="text-xs text-stone-500 mt-4">{t("home.hero.footer")}</p>
         </div>
 
         <div className="lg:col-span-8">
@@ -67,26 +63,26 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-sm uppercase tracking-widest text-neutral-500 mb-2">
+            <h3 className="text-sm uppercase tracking-widest text-stone-500 mb-2">
               {t("home.nextJam.dateLabel")}
             </h3>
             <p className="text-lg font-medium">{nextJam.date}</p>
-            <p className="text-sm text-neutral-600">{nextJam.time}</p>
+            <p className="text-sm text-stone-600">{nextJam.time}</p>
           </div>
 
           <div>
-            <h3 className="text-sm uppercase tracking-widest text-neutral-500 mb-2">
+            <h3 className="text-sm uppercase tracking-widest text-stone-500 mb-2">
               {t("home.nextJam.locationLabel")}
             </h3>
             <p className="text-lg font-medium">{nextJam.location}</p>
           </div>
 
           <div>
-            <h3 className="text-sm uppercase tracking-widest text-neutral-500 mb-2">
+            <h3 className="text-sm uppercase tracking-widest text-stone-500 mb-2">
               {t("home.nextJam.speakerLabel")}
             </h3>
             <p className="text-lg font-medium">{nextJam.speaker.name}</p>
-            <p className="text-sm text-neutral-600">{nextJam.speaker.title}</p>
+            <p className="text-sm text-stone-600">{nextJam.speaker.title}</p>
             <blockquote className="mt-3 text-sm italic text-neutral-700">
               “{nextJam.speaker.quote}”
             </blockquote>
@@ -103,7 +99,7 @@ export default function Home() {
       {/* WHY MIJ EXISTS */}
       <section className="max-w-5xl mx-auto px-6 py-24">
         <h2 className="font-serif text-2xl">{t("home.why.title")}</h2>
-        <p className="text-neutral-600 text-lg mt-4">
+        <p className="text-stone-600 text-lg mt-4">
           {t("home.why.description")}
         </p>
       </section>
@@ -123,7 +119,7 @@ export default function Home() {
           {t("home.format.title")}
         </h2>
 
-        <ul className="space-y-4 text-neutral-600">
+        <ul className="space-y-4 text-stone-600">
           <li>• {t("home.format.item1")}</li>
           <li>• {t("home.format.item2")}</li>
           <li>• {t("home.format.item3")}</li>
@@ -145,7 +141,7 @@ export default function Home() {
       {/* WHO SHOULD JOIN */}
       <section className="max-w-5xl mx-auto px-6 py-24">
         <h2 className="text-2xl font-semibold mb-4">{t("home.who.title")}</h2>
-        <p className="text-neutral-600 text-lg">{t("home.who.description")}</p>
+        <p className="text-stone-600 text-lg">{t("home.who.description")}</p>
       </section>
 
       {/* FINAL CTA */}
