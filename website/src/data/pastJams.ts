@@ -19,6 +19,116 @@ export interface Jam {
 }
 
 export const pastJams: Jam[] = [
+  // ─── 2025 ───────────────────────────────────────────────
+  {
+    id: "jam-2025-09",
+    isoDate: "2025-09",
+    displayDate: {
+      en: "September 2025",
+      fr: "septembre 2025",
+    },
+    speaker: {
+      name: "Fahad A.",
+      title: {
+        en: "CEO of Hivo – Future of Work Platform",
+        fr: "PDG de Hivo – Plateforme pour l’avenir du travail",
+      },
+    },
+    quote: {
+      en: "The future of work isn’t remote or in-office—it’s about finding the right context for deep collaboration.",
+      fr: "L’avenir du travail, ce n’est ni le télétravail ni le bureau — c’est trouver le bon contexte pour collaborer en profondeur.",
+    },
+    description: {
+      en: "Fahad shared his journey building Hivo, a platform connecting freelancers and remote professionals with ideal workspaces. The session closed with a group reflection on key themes for the rest of 2025.",
+      fr: "Fahad a partagé son parcours à la tête de Hivo, une plateforme qui connecte freelances et professionnels nomades avec des espaces de travail adaptés. La soirée s’est conclue par une réflexion collective sur les thèmes clés à explorer d’ici la fin de 2025.",
+    },
+    theme: {
+      en: "Future of Work & Entrepreneurial Journeys",
+      fr: "Avenir du travail et parcours entrepreneurial",
+    },
+  },
+  {
+    id: "jam-2025-08",
+    isoDate: "2025-08",
+    displayDate: {
+      en: "August 2025",
+      fr: "août 2025",
+    },
+    speaker: {
+      name: "Kareem Rahaman & Rim",
+      title: {
+        en: "Growth Lead at Club PKL & Founder of SoraRisk",
+        fr: "Responsable croissance chez Club PKL & Fondatrice de SoraRisk",
+      },
+    },
+    quote: {
+      en: "The next billion-dollar business might be in pickleball—or in risk intelligence for emerging markets.",
+      fr: "La prochaine entreprise à un milliard pourrait être dans le pickleball… ou dans l’intelligence du risque pour les marchés émergents.",
+    },
+    description: {
+      en: "Kareem took us inside the explosive growth of pickleball as a sport and business. Rim then presented SoraRisk, her startup building risk assessment tools for dynamic environments.",
+      fr: "Kareem nous a plongés dans la croissance fulgurante du pickleball, à la fois comme sport et comme opportunité commerciale. Rim a ensuite présenté SoraRisk, sa startup qui développe des outils d’évaluation du risque pour des environnements dynamiques.",
+    },
+    theme: {
+      en: "Emerging Industries & Founder Stories",
+      fr: "Industries émergentes et récits de fondatrices",
+    },
+  },
+  {
+    id: "jam-2025-07",
+    isoDate: "2025-07",
+    displayDate: {
+      en: "July 2025",
+      fr: "juillet 2025",
+    },
+    speaker: {
+      name: "Montreal Idea Jams Community",
+      title: {
+        en: "Summer Terrace Hangout",
+        fr: "Apéro-terrasse estival",
+      },
+    },
+    quote: {
+      en: "Some of the best ideas start with a drink and no agenda.",
+      fr: "Les meilleures idées naissent parfois avec un verre… et sans ordre du jour.",
+    },
+    description: {
+      en: "A relaxed gathering at a local terrace to reconnect, share informal updates, and enjoy Montreal summer nights. No slides, no pressure—just good company and open conversation.",
+      fr: "Un rassemblement détendu en terrasse pour se retrouver, échanger des nouvelles informelles et profiter des soirées montréalaises. Pas de diapos, pas de pression — juste de la belle compagnie et des conversations libres.",
+    },
+    theme: {
+      en: "Community Connection",
+      fr: "Connexion communautaire",
+    },
+  },
+  {
+    id: "jam-2025-04",
+    isoDate: "2025-04",
+    displayDate: {
+      en: "April 2025",
+      fr: "avril 2025",
+    },
+    speaker: {
+      name: "Jeffrey",
+      title: {
+        en: "B2B SaaS sales & UAE entrepreneur",
+        fr: "Ventes SaaS B2B & entrepreneur aux Émirats",
+      },
+    },
+    quote: {
+      en: "Enterprise sales isn’t about features—it’s about aligning with your client’s internal politics and timelines.",
+      fr: "La vente en entreprise, ce n’est pas les fonctionnalités — c’est s’aligner sur la politique interne et les calendriers de votre client.",
+    },
+    description: {
+      en: "Jeffrey shared hard-won insights on selling B2B software to enterprise clients, followed by a conversation on building and operating a business in the UAE’s unique ecosystem.",
+      fr: "Jeffrey a partagé des leçons durement acquises sur la vente de logiciels B2B à de grands comptes, suivi d’une discussion sur la création et l’exploitation d’une entreprise dans l’écosystème unique des Émirats.",
+    },
+    theme: {
+      en: "B2B Sales & International Entrepreneurship",
+      fr: "Ventes B2B & entrepreneuriat international",
+    },
+  },
+
   // ─── 2024 ───────────────────────────────────────────────
   {
     id: "jam-2024-11",
