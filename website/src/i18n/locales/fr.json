@@ -29,6 +29,11 @@
     "past": {
       "title": "Parmi nos invité·es précédents"
     },
+    "pastJams": {
+      "title": "Archives : Montreal Idea Jams",
+      "subtitle": "18 mois de conversations sincères avec des fondatrices, opérateurs et bâtisseurs qui ont emprunté le chemin de l’entrepreneuriat.",
+      "backToHome": "Retour aux prochaines Jams"
+    },
     "who": {
       "title": "À qui s’adresse l’événement ?",
       "description": "Aux personnes curieuses de l’entrepreneuriat et qui envisagent sérieusement de sauter le pas — ou qui l’ont déjà fait."
@@ -37,5 +42,10 @@
       "title": "Venez pour la conversation.\nRestez pour la réflexion.",
       "cta": "Participer à la prochaine Jam"
     }
+  },
+  "pastJams": {
+    "title": "Archives : Montreal Idea Jams",
+    "subtitle": "18 mois de conversations sincères avec des fondatrices, opérateurs et bâtisseurs qui ont emprunté le chemin de l’entrepreneuriat.",
+    "backToHome": "Retour aux prochaines Jams"
   }
 }

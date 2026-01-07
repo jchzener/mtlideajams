@@ -37,5 +37,10 @@
       "title": "Come for the conversation. Stay for the thinking.",
       "cta": "Join the next Jam"
     }
+  },
+  "pastJams": {
+    "title": "Past Montreal Idea Jams",
+    "subtitle": "18 months of honest conversations with founders, operators, and builders who’ve walked the entrepreneurial path.",
+    "backToHome": "Back to upcoming Jams"
   }
 }
