@@ -5,6 +5,7 @@ import convoImg from "../assets/images/mij-conversation.jpg";
 import peopleImg from "../assets/images/mij-people.jpg";
 import { useTranslation } from "react-i18next";
 import LanguageToggle from "../components/LanguageToggle";
+import HomePastJamsCollage from "../components/HomePastJamsCollage";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -21,15 +22,6 @@ export default function Home() {
     },
     ctaLink: "#",
   };
-
-  const pastSpeakers = [
-    { role: "Founder, early-stage fintech" },
-    { role: "Ex-Stripe operator" },
-    { role: "Repeat SaaS founder" },
-    { role: "Product lead, Series B startup" },
-    { role: "Bootstrapped marketplace founder" },
-    { role: "Angel investor & operator" },
-  ];
 
   return (
     <main className="bg-[#f7f6f3] text-neutral-900">
@@ -147,18 +139,8 @@ export default function Home() {
         />
       </section>
 
-      {/* PAST CONVERSATIONS */}
-      <section className="max-w-5xl mx-auto px-6 py-24">
-        <h3 className="text-sm uppercase tracking-widest text-neutral-500 mb-6">
-          {t("home.past.title")}
-        </h3>
-
-        <ul className="grid grid-cols-2 md:grid-cols-3 gap-y-4 text-neutral-700">
-          {pastSpeakers.map((speaker, index) => (
-            <li key={index}>{speaker.role}</li>
-          ))}
-        </ul>
-      </section>
+      {/* HOME PAST JAMS COLLAGE */}
+      <HomePastJamsCollage />
 
       {/* WHO SHOULD JOIN */}
       <section className="max-w-5xl mx-auto px-6 py-24">

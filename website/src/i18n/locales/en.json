@@ -14,6 +14,16 @@
       "speakerLabel": "Speaker",
       "cta": "Reserve your spot"
     },
+    "past": {
+      "title": "Past conversations included",
+      "viewAll": "View all past Jams"
+    },
+    "jamDetail": {
+      "theme": "Theme",
+      "quote": "Key Quote",
+      "description": "Description",
+      "backToAll": "Back to all Jams"
+    },
     "why": {
       "title": "Why MIJ exists",
       "description": "Most entrepreneurial communities optimize for visibility and speed. We optimize for thinking."
@@ -26,9 +36,6 @@
       "item3": "Open questions and group discussion"
     },
     "peopleImageAlt": "People talking, not presenting",
-    "past": {
-      "title": "Past conversations included"
-    },
     "who": {
       "title": "Who should join",
       "description": "People curious about entrepreneurship and seriously considering making the jump — or already in it."
