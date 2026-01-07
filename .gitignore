@@ -8,4 +8,5 @@ out/
 log/*.log
 tmp/**
 node_modules/
-.sass-cache
+.sass-cachey
+website/mij_past_events_planning_mail.pages
