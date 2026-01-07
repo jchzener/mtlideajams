@@ -3,7 +3,7 @@
 import { useTranslation } from "react-i18next";
 import PastJamsSection from "../components/PastJamsGrid";
 import { Link } from "react-router-dom";
-import LanguageToggle from "../components/LanguageToggle"; // ← Import it
+import LanguageToggle from "../components/LanguageToggle";
 
 export default function PastJamsPage() {
   const { t } = useTranslation();
