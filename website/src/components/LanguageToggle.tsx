@@ -5,28 +5,32 @@ import { useTranslation } from "react-i18next";
 export default function LanguageToggle() {
   const { i18n } = useTranslation();
 
-  const handleLanguageChange = (lng: string) => {
+  const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
-    // Optional: save preference
     localStorage.setItem("lng", lng);
   };
 
+  const isEn = i18n.language.startsWith("en");
+  const isFr = i18n.language.startsWith("fr");
+
   return (
-    <div className="text-xs text-neutral-400 space-x-2">
+    <div className="flex items-center gap-1 text-xs tracking-widest text-stone-400">
       <button
-        onClick={() => handleLanguageChange("en")}
-        className={`hover:text-neutral-900 transition ${
-          i18n.language.startsWith("en") ? "font-bold text-neutral-900" : ""
+        onClick={() => changeLanguage("en")}
+        className={`transition hover:text-stone-900 ${
+          isEn ? "text-stone-900" : ""
         }`}
         aria-label="Switch to English"
       >
         EN
       </button>
-      <span>/</span>
+
+      <span className="opacity-40">/</span>
+
       <button
-        onClick={() => handleLanguageChange("fr")}
-        className={`hover:text-neutral-900 transition ${
-          i18n.language.startsWith("fr") ? "font-bold text-neutral-900" : ""
+        onClick={() => changeLanguage("fr")}
+        className={`transition hover:text-stone-900 ${
+          isFr ? "text-stone-900" : ""
         }`}
         aria-label="Basculer en français"
       >
