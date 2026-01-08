@@ -8,19 +8,36 @@
       "imageAlt": "People in conversation at Montreal Idea Jams"
     },
     "nextJam": {
-      "title": "Next Montreal Idea Jam",
-      "dateLabel": "Date",
-      "locationLabel": "Location",
-      "speakerLabel": "Speaker",
+      "eyebrow": "Next conversation",
+      "title": "January 30 · An honest conversation about building",
+      "context": "Our next Montreal Idea Jam is an in-person conversation — no slides, no pitching, just people thinking out loud together.",
+      "speakerIntro": "This month, we’re joined by",
+      "speakerName": "Marie L.",
+      "speakerTitle": "Co-founder of CleanLoop",
+      "quote": "The hardest part wasn’t the technology — it was believing the idea was worth pursuing.",
+      "detailsTitle": "Details",
+      "date": "January 27, 2026",
+      "time": "6:30 PM – 8:30 PM",
+      "location": "Café Névé · Plateau",
+      "note": "In-person · Limited spots",
       "cta": "Reserve your spot"
     },
     "past": {
       "title": "Past conversations included",
       "viewAll": "View all past Jams"
     },
+    "jamExperience": {
+      "title": "What a Jam feels like",
+      "p1": "You arrive with a drink, not a pitch.\nConversations start loosely and deepen naturally.",
+      "p2": "Someone shares a real problem they’re thinking through.\nOthers listen, question, and build on it.",
+      "p3": "By the end of the night, you leave with fewer answers —\nand better questions."
+    },
     "why": {
-      "title": "Why MIJ exists",
-      "description": "Most entrepreneurial communities optimize for visibility and speed. We optimize for thinking."
+      "title": "Why Montreal Idea Jams exist",
+      "thesis": "Most entrepreneurial spaces optimize for visibility.\nWe optimize for thinking.",
+      "p1": "We created MIJ because meaningful conversations rarely happen in rooms designed for pitching, networking, or personal branding.",
+      "p2": "Our best sessions happen when people slow down, share something unfinished, and let others think with them — without trying to impress.",
+      "p3": "MIJ exists for people who care more about clarity than applause, and progress than polish."
     },
     "convoImageAlt": "Small group discussion during a Jam",
     "format": {

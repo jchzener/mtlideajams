@@ -27,7 +27,6 @@ export default function HomePastJamsCollage() {
             className="group relative bg-white rounded-xl shadow-sm overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-md hover:-translate-y-1"
             style={{ transform: `rotate(${getTilt(jam.id)})` }}
           >
-            {/* Content */}
             <div className="p-6">
               <h3 className="font-serif text-lg font-medium text-stone-900 group-hover:text-black">
                 {jam.speaker.name}

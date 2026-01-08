@@ -8,15 +8,32 @@
       "imageAlt": "Personnes en discussion lors d’une Montreal Idea Jam"
     },
     "nextJam": {
-      "title": "Prochaine Montreal Idea Jam",
-      "dateLabel": "Date",
-      "locationLabel": "Lieu",
-      "speakerLabel": "Invité·e",
-      "cta": "Réserver votre place"
+      "eyebrow": "Prochaine rencontre",
+      "title": "27 janvier · Une conversation honnête sur la construction",
+      "context": "La prochaine rencontre de Montreal Idea Jams est une discussion en personne — sans slides, sans pitch, simplement des idées partagées ouvertement.",
+      "speakerIntro": "Ce mois-ci, nous recevons",
+      "speakerName": "Marie L.",
+      "speakerTitle": "Cofondatrice de CleanLoop",
+      "quote": "La partie la plus difficile n’était pas la technologie — mais d’oser croire que l’idée valait la peine.",
+      "detailsTitle": "Détails",
+      "date": "27 janvier 2026",
+      "time": "18 h 30 – 20 h 30",
+      "location": "Café Névé · Plateau",
+      "note": "En personne · Places limitées",
+      "cta": "Réserver sa place"
+    },
+    "jamExperience": {
+      "title": "À quoi ressemble un Jam",
+      "p1": "On arrive avec un verre, pas un pitch.\nLes conversations commencent librement et prennent de la profondeur.",
+      "p2": "Quelqu’un partage une vraie réflexion en cours.\nLes autres écoutent, questionnent et enrichissent.",
+      "p3": "À la fin de la soirée, on repart avec moins de réponses —\nmais de meilleures questions."
     },
     "why": {
       "title": "Pourquoi Montreal Idea Jams existe",
-      "description": "La plupart des communautés entrepreneuriales misent sur la visibilité et la vitesse. Nous, on mise sur la réflexion."
+      "thesis": "La plupart des espaces entrepreneuriaux optimisent la visibilité.\nNous, on optimise la réflexion.",
+      "p1": "MIJ est né du constat que les conversations les plus utiles ne se produisent presque jamais dans des espaces conçus pour pitcher, réseauter ou se mettre en valeur.",
+      "p2": "Nos meilleures rencontres arrivent quand on ralentit, qu’on partage quelque chose d’incomplet, et qu’on réfléchit ensemble — sans chercher à impressionner.",
+      "p3": "MIJ s’adresse à celles et ceux qui valorisent davantage la clarté que les applaudissements, et le progrès que le vernis."
     },
     "convoImageAlt": "Petit groupe en discussion pendant une Jam",
     "format": {
