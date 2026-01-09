@@ -17,9 +17,14 @@
       "quote": "The hardest part wasn’t the technology — it was believing the idea was worth pursuing.",
       "detailsTitle": "Details",
       "date": "January 27, 2026",
+      "dateLabel": "Date",
       "time": "6:30 PM – 8:30 PM",
       "location": "Café Névé · Plateau",
       "note": "In-person · Limited spots",
+      "details": "Details",
+      "timeLabel": "Time",
+      "locationLabel": "Location",
+      "notes": "In-person · Limited spots",
       "cta": "Claim your spot"
     },
     "past": {
