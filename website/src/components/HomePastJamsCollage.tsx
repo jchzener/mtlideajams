@@ -5,22 +5,24 @@ import { Link } from "react-router-dom";
 import { pastJams } from "../data/pastJams";
 
 export default function HomePastJamsCollage() {
-  const { i18n } = useTranslation();
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
   const lang = i18n.language.startsWith("fr") ? "fr" : "en";
 
   const recentJams = pastJams.slice(0, 3);
 
-  // Helper: deterministic tilt based on jam id
   const getTilt = (id: string) =>
     ["0", "2", "4", "6", "8"].some((d) => id.endsWith(d)) ? "1deg" : "-1deg";
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-24">
       <h2 className="font-serif text-2xl mb-8">{t("home.past.title")}</h2>
-      <p className="text-stone-600 text-lg max-w-3xl mb-12">
-        {t("home.credibility.intro")}
+
+      <p className="text-stone-600 mb-8 max-w-2xl">
+        Over the past months, these conversations have brought together
+        founders, operators, investors, and builders from very different paths —
+        all showing up to think, not pitch.
       </p>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {recentJams.map((jam) => (
           <Link
@@ -49,7 +51,6 @@ export default function HomePastJamsCollage() {
               </span>
             </div>
 
-            {/* Collage corner */}
             <div className="absolute top-0 right-0 w-8 h-8 bg-stone-900 opacity-5 transform rotate-45 translate-x-2 -translate-y-2"></div>
           </Link>
         ))}
