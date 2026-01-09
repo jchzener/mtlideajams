@@ -45,6 +45,11 @@ export default function PastJamsPage() {
         <div className="mt-10 border-t border-stone-300" />
       </section>
 
+      {/* ARCHIVE GRID */}
+      <section className="max-w-7xl mx-auto px-6 pb-24">
+        <PastJamsSection />
+      </section>
+
       {/* SOFT FOOTER CTA */}
       <section className="max-w-5xl mx-auto px-6 py-24 text-center">
         <p className="text-stone-600 mb-6">{t("pastJams.footerPrompt")}</p>
