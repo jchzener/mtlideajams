@@ -11,18 +11,26 @@ export default function PastJamsPage() {
   return (
     <main className="bg-stone-50 text-stone-900 min-h-screen">
       {/* Header with back link + language toggle */}
-      <header className="max-w-7xl mx-auto px-6 pt-8 flex items-center justify-between">
+      <header className="max-w-7xl mx-auto px-6 pt-10 flex items-center justify-between">
         <Link
           to="/"
-          className="text-sm text-stone-500 hover:text-stone-900 transition"
+          className="text-xs tracking-widest uppercase text-stone-500"
         >
           ← Montreal Idea Jams
         </Link>
 
-        {/* ✅ Add LanguageToggle here */}
-        <LanguageToggle />
-      </header>
+        <nav className="flex items-center gap-6 text-sm text-stone-600">
+          <a href="#join" className="hover:text-stone-900 transition">
+            {t("nav.join")}
+          </a>
 
+          <a href="/jams" className="hover:text-stone-900 transition">
+            {t("nav.past")}
+          </a>
+
+          <LanguageToggle />
+        </nav>
+      </header>
       {/* Page title */}
       <section className="max-w-7xl mx-auto px-6 py-16">
         <h1 className="font-serif text-3xl md:text-4xl">
