@@ -26,11 +26,24 @@ export default function Home() {
   return (
     <main className="bg-stone-50 text-stone-900">
       {/* HEADER */}
-      <header className="max-w-7xl mx-auto px-6 pt-6 flex items-center justify-between">
+      <header className="max-w-7xl mx-auto px-6 pt-8 flex items-center justify-between">
+        {/* Left: Identity */}
         <span className="text-xs tracking-widest uppercase text-stone-500">
           Montreal Idea Jams
         </span>
-        <LanguageToggle />
+
+        {/* Right: Quiet nav */}
+        <nav className="flex items-center gap-6 text-xs tracking-widest text-stone-400">
+          <a href="/jams" className="hover:text-stone-900 transition">
+            Past Jams
+          </a>
+
+          <a href="#next-jam" className="hover:text-stone-900 transition">
+            Join the conversation
+          </a>
+
+          <LanguageToggle />
+        </nav>
       </header>
 
       {/* HERO */}
@@ -44,7 +57,7 @@ export default function Home() {
             No slides. No pitching. Just honest stories and discussions.
           </p>
           <button className="bg-stone-900 text-white px-6 py-3 rounded-xl text-sm hover:bg-stone-800 transition active:translate-y-px">
-            Join the next Jam
+            {t("home.finalCta.cta")}
           </button>
           <p className="text-xs text-stone-500 mt-4">
             Montreal · In-person · Once a month
@@ -63,43 +76,67 @@ export default function Home() {
         </div>
       </section>
 
-      {/* NEXT JAM */}
-      <section className="max-w-7xl mx-auto px-6 py-24 bg-white rounded-2xl shadow-sm">
-        <h2 className="font-serif text-2xl mb-6">Next Montreal Idea Jam</h2>
+      {/* NEXT JAM — INVITATION */}
+      <section className="max-w-7xl mx-auto px-6 py-28 bg-white rounded-3xl shadow-sm border border-stone-200">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
+          {/* LEFT */}
+          <div className="md:col-span-7">
+            <span className="text-xs uppercase tracking-widest text-stone-500">
+              {t("home.nextJam.eyebrow")}
+            </span>
 
-        <div className="flex flex-col md:flex-row gap-8">
-          <div className="md:w-1/3">
-            <h3 className="text-sm uppercase tracking-widest text-stone-500 mb-2">
-              📅 Date
-            </h3>
-            <p className="text-lg font-medium">January 27, 2026</p>
-            <p className="text-sm text-stone-600">6:30 PM – 8:30 PM</p>
-          </div>
+            <h2 className="font-serif text-3xl mt-3 mb-6">
+              {t("home.nextJam.title")}
+            </h2>
 
-          <div className="md:w-1/3">
-            <h3 className="text-sm uppercase tracking-widest text-stone-500 mb-2">
-              📍 Location
-            </h3>
-            <p className="text-lg font-medium">Café Névé – Plateau</p>
-          </div>
+            <p className="text-stone-600 text-lg mb-8">
+              {t("home.nextJam.context")}
+            </p>
 
-          <div className="md:w-1/3">
-            <h3 className="text-sm uppercase tracking-widest text-stone-500 mb-2">
-              👤 Speaker
-            </h3>
-            <p className="text-lg font-medium">Marie L.</p>
-            <p className="text-sm text-stone-600">Co-founder of CleanLoop</p>
-            <blockquote className="text-sm italic text-stone-700 mt-2">
-              “The biggest challenge wasn’t technical… it was believing my idea
-              deserved to exist.”
+            <p className="text-stone-500 mb-1">
+              {t("home.nextJam.speakerIntro")}
+            </p>
+
+            <p className="text-lg font-medium">
+              {t("home.nextJam.speakerName")}
+              <span className="text-stone-500">
+                {" "}
+                — {t("home.nextJam.speakerTitle")}
+              </span>
+            </p>
+
+            <blockquote className="mt-6 pl-4 border-l-2 border-stone-300 italic text-stone-700">
+              “{t("home.nextJam.quote")}”
             </blockquote>
           </div>
-        </div>
 
-        <div className="mt-8">
-          <button className="bg-stone-900 text-white px-6 py-3 rounded-xl text-sm hover:bg-stone-800 transition active:translate-y-px">
-            Reserve your spot
-          </button>
+          {/* RIGHT */}
+          <div className="md:col-span-5">
+            <div className="bg-stone-50 rounded-2xl p-8 border border-stone-200">
+              <h3 className="text-sm uppercase tracking-widest text-stone-500 mb-4">
+                {t("home.nextJam.detailsTitle")}
+              </h3>
+
+              <div className="space-y-3 text-stone-700">
+                <p>
+                  <strong>Date:</strong> {t("home.nextJam.date")}
+                </p>
+                <p>
+                  <strong>Time:</strong> {t("home.nextJam.time")}
+                </p>
+                <p>
+                  <strong>Location:</strong> {t("home.nextJam.location")}
+                </p>
+                <p className="text-sm text-stone-500">
+                  {t("home.nextJam.note")}
+                </p>
+              </div>
+
+              <button className="mt-8 w-full bg-stone-900 text-white py-3 rounded-xl text-sm hover:bg-stone-800 transition active:translate-y-px">
+                {t("home.nextJam.cta")}
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -192,7 +229,7 @@ export default function Home() {
         </h2>
 
         <button className="bg-stone-900 text-white px-8 py-4 rounded-xl text-sm hover:bg-stone-800 transition active:translate-y-px">
-          Join the next Jam
+          {t("home.finalCta.cta")}
         </button>
       </section>
     </main>
