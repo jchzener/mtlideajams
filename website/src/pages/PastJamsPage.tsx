@@ -10,50 +10,42 @@ export default function PastJamsPage() {
 
   return (
     <main className="bg-stone-50 text-stone-900 min-h-screen">
-      {/* Header with back link + language toggle */}
-      <header className="max-w-7xl mx-auto px-6 pt-10 flex items-center justify-between">
+      {/* HEADER — same mental model as Home */}
+      <header className="max-w-7xl mx-auto px-6 pt-8 flex items-center justify-between">
         <Link
           to="/"
-          className="text-xs tracking-widest uppercase text-stone-500"
+          className="text-xs tracking-widest uppercase text-stone-500 hover:text-stone-900 transition"
         >
-          ← Montreal Idea Jams
+          Montreal Idea Jams
         </Link>
 
         <nav className="flex items-center gap-6 text-sm text-stone-600">
-          <a href="#join" className="hover:text-stone-900 transition">
+          <Link to="/#join" className="hover:text-stone-900 transition">
             {t("nav.join")}
-          </a>
+          </Link>
 
-          <a href="/jams" className="hover:text-stone-900 transition">
+          <Link to="/jams" className="text-stone-900 font-medium">
             {t("nav.past")}
-          </a>
+          </Link>
 
           <LanguageToggle />
         </nav>
       </header>
-      {/* Page title */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <h1 className="font-serif text-3xl md:text-4xl">
-          {t("pastJams.title")}
-        </h1>
-        <p className="text-stone-600 mt-4 max-w-2xl">
-          {t("pastJams.subtitle")}
-        </p>
-      </section>
 
-      {/* Archive grid */}
-      <PastJamsSection />
+      {/* SOFT FOOTER CTA */}
+      <section className="max-w-5xl mx-auto px-6 py-24 text-center">
+        <p className="text-stone-600 mb-6">{t("pastJams.footerPrompt")}</p>
 
-      {/* Back to top / home CTA */}
-      <section className="max-w-7xl mx-auto px-6 py-16 text-center">
         <Link
-          to="/"
-          className="px-6 py-3 bg-stone-900 text-white rounded-xl text-sm 
-           hover:bg-stone-800 transition 
-           active:translate-y-px 
-           focus:outline-none focus:ring-2 focus:ring-stone-500"
+          to="/#join"
+          className="inline-flex items-center gap-2
+            px-6 py-3
+            bg-stone-900 text-white
+            rounded-xl text-sm
+            hover:bg-stone-800 transition
+            active:translate-y-px"
         >
-          {t("pastJams.backToHome")}
+          {t("nav.join")}
         </Link>
       </section>
     </main>
