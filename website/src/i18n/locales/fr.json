@@ -1,4 +1,8 @@
 {
+  "nav": {
+    "join": "Rejoindre la conversation",
+    "past": "Jams passés"
+  },
   "home": {
     "hero": {
       "title": "Des conversations mensuelles pour celles et ceux qui prennent l’entrepreneuriat au sérieux.",
