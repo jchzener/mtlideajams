@@ -35,6 +35,25 @@
       "p2": "Nos meilleures rencontres arrivent quand on ralentit, qu’on partage quelque chose d’incomplet, et qu’on réfléchit ensemble — sans chercher à impressionner.",
       "p3": "MIJ s’adresse à celles et ceux qui valorisent davantage la clarté que les applaudissements, et le progrès que le vernis."
     },
+    "credibility": {
+      "title": "Qui était dans la salle",
+      "intro": "Au fil des mois, ces rencontres ont réuni des fondateurs, des opérateurs, des investisseurs et des bâtisseurs aux parcours très différents — tous là pour réfléchir, pas pour pitcher.",
+      "people": [
+        "Fondateurs de startups en phase précoce",
+        "Opérateurs en phase de croissance",
+        "Personnes acquérant et dirigeant des PME",
+        "Investisseurs évaluant des opportunités",
+        "Experts en IA, climat, jeux vidéo, juridique et finance"
+      ],
+      "topicsTitle": "Quelques conversations passées",
+      "topics": [
+        "Acquisition de PME (repreneuriat)",
+        "Évaluation d’investissements early-stage",
+        "Cas d’usage concrets de l’IA",
+        "Croître sans briser la culture",
+        "La réalité vécue de l’entrepreneuriat"
+      ]
+    },
     "convoImageAlt": "Petit groupe en discussion pendant une Jam",
     "format": {
       "title": "À quoi ressemble une Jam ?",

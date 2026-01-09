@@ -20,7 +20,7 @@
       "time": "6:30 PM – 8:30 PM",
       "location": "Café Névé · Plateau",
       "note": "In-person · Limited spots",
-      "cta": "Reserve your spot"
+      "cta": "Claim your spot"
     },
     "past": {
       "title": "Past conversations included",
@@ -39,6 +39,25 @@
       "p2": "Our best sessions happen when people slow down, share something unfinished, and let others think with them — without trying to impress.",
       "p3": "MIJ exists for people who care more about clarity than applause, and progress than polish."
     },
+    "credibility": {
+      "title": "Who’s been in the room",
+      "intro": "Over the past months, these conversations have brought together founders, operators, investors, and builders from very different paths — all showing up to think, not pitch.",
+      "people": [
+        "Founders building early-stage startups",
+        "Operators scaling teams and systems",
+        "People acquiring and running small businesses",
+        "Investors evaluating deals and opportunities",
+        "Domain experts in AI, climate, gaming, legal, and finance"
+      ],
+      "topicsTitle": "Some past conversations",
+      "topics": [
+        "Acquiring small companies (reprenariat)",
+        "Evaluating early-stage investments",
+        "AI use cases beyond the hype",
+        "Scaling without breaking culture",
+        "What entrepreneurship actually feels like"
+      ]
+    },
     "convoImageAlt": "Small group discussion during a Jam",
     "format": {
       "title": "What a Jam looks like",
@@ -53,7 +72,7 @@
     },
     "finalCta": {
       "title": "Come for the conversation. Stay for the thinking.",
-      "cta": "Join the next Jam"
+      "cta": "Join the conversation"
     }
   },
   "pastJams": {

@@ -18,7 +18,9 @@ export default function HomePastJamsCollage() {
   return (
     <section className="max-w-7xl mx-auto px-6 py-24">
       <h2 className="font-serif text-2xl mb-8">{t("home.past.title")}</h2>
-
+      <p className="text-stone-600 text-lg max-w-3xl mb-12">
+        {t("home.credibility.intro")}
+      </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {recentJams.map((jam) => (
           <Link
