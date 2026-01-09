@@ -1,4 +1,8 @@
 {
+  "nav": {
+    "join": "Join the conversation",
+    "past": "Past Jams"
+  },
   "home": {
     "hero": {
       "title": "Monthly conversations for people serious about entrepreneurship.",
