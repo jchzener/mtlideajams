@@ -32,6 +32,19 @@ export default function PastJamsPage() {
         </nav>
       </header>
 
+      {/* INTRO — editorial, archive tone */}
+      <section className="max-w-5xl mx-auto px-6 pt-20 pb-16">
+        <h1 className="font-serif text-3xl md:text-4xl mb-4">
+          {t("pastJams.title")}
+        </h1>
+
+        <p className="text-stone-600 text-lg max-w-2xl leading-relaxed">
+          {t("pastJams.subtitle")}
+        </p>
+
+        <div className="mt-10 border-t border-stone-300" />
+      </section>
+
       {/* SOFT FOOTER CTA */}
       <section className="max-w-5xl mx-auto px-6 py-24 text-center">
         <p className="text-stone-600 mb-6">{t("pastJams.footerPrompt")}</p>
