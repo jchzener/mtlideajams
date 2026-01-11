@@ -1,3 +1,5 @@
+// src/components/JamCard.tsx
+
 import { Jam } from "../data/pastJams";
 import { useTranslation } from "react-i18next";
 
@@ -7,10 +9,17 @@ interface JamCardProps {
 
 export default function JamCard({ jam }: JamCardProps) {
   const { i18n } = useTranslation();
-  const lang = i18n.language as "en" | "fr";
+  const lang = i18n.language.startsWith("fr") ? "fr" : "en";
+
+  // deterministic "hand-placed" tilt
+  const tilt =
+    jam.id.endsWith("8") || jam.id.endsWith("4") || jam.id.endsWith("0")
+      ? "rotate(1.2deg)"
+      : "rotate(-1.2deg)";
 
   return (
     <article
+      style={{ transform: tilt }}
       className="
         group relative h-full
         bg-white rounded-2xl border border-stone-200
@@ -20,6 +29,9 @@ export default function JamCard({ jam }: JamCardProps) {
         hover:shadow-xl
       "
     >
+      {/* Paper corner */}
+      <div className="absolute top-0 right-0 w-6 h-6 bg-stone-900/5 rotate-45 translate-x-2 -translate-y-2" />
+
       {/* Date */}
       <div className="text-xs uppercase tracking-widest text-stone-400">
         {jam.displayDate[lang]}
@@ -39,8 +51,7 @@ export default function JamCard({ jam }: JamCardProps) {
       <div
         className="
           mt-4 text-sm text-stone-600
-          max-h-0 overflow-hidden
-          opacity-0
+          max-h-0 overflow-hidden opacity-0
           transition-all duration-300
           group-hover:max-h-40
           group-hover:opacity-100
@@ -52,8 +63,8 @@ export default function JamCard({ jam }: JamCardProps) {
       {/* Read session */}
       <span
         className="
-          absolute bottom-5 right-6
-          text-xs text-stone-500
+          absolute right-6 top-6
+          text-xs text-green-600
           opacity-0
           transition-opacity duration-200
           group-hover:opacity-100
