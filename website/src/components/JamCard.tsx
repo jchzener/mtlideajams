@@ -1,73 +1,66 @@
-// src/components/JamCard.tsx
+import { Jam } from "../data/pastJams";
+import { useTranslation } from "react-i18next";
 
-type JamCardProps = {
-  jam: {
-    title: string;
-    date: string;
-    image: string;
-    theme?: string;
-    excerpt?: string;
-    speaker?: string;
-  };
-};
+interface JamCardProps {
+  jam: Jam;
+}
 
 export default function JamCard({ jam }: JamCardProps) {
+  const { i18n } = useTranslation();
+  const lang = i18n.language as "en" | "fr";
+
   return (
     <article
-      className="h-full rounded-xl border border-stone-200 bg-white
+      className="
+        group relative h-full
+        bg-white rounded-2xl border border-stone-200
+        p-6
         transition-all duration-300 ease-out
-        hover:-translate-y-1 hover:shadow-md"
+        hover:-translate-y-1
+        hover:shadow-xl
+      "
     >
-      {/* Image */}
-      <div className="overflow-hidden rounded-t-xl">
-        <img
-          src={jam.image}
-          alt={jam.title}
-          className="w-full h-44 object-cover
-            transition-all duration-300
-            group-hover:h-32"
-        />
+      {/* Date */}
+      <div className="text-xs uppercase tracking-widest text-stone-400">
+        {jam.displayDate[lang]}
       </div>
 
-      {/* Content */}
-      <div className="p-5 flex flex-col justify-between h-full">
-        <div>
-          <p className="text-xs uppercase tracking-widest text-stone-500 mb-1">
-            {jam.date}
-          </p>
+      {/* Theme */}
+      <h3 className="mt-3 font-serif text-lg leading-snug">
+        {jam.theme[lang]}
+      </h3>
 
-          <h3 className="font-serif text-lg mb-2">{jam.title}</h3>
+      {/* Speaker */}
+      <p className="mt-2 text-sm text-stone-600">
+        {jam.speaker.name} — {jam.speaker.title[lang]}
+      </p>
 
-          {/* Hover reveal */}
-          <div
-            className="overflow-hidden max-h-0 opacity-0
-              transition-all duration-300 ease-out
-              group-hover:max-h-40 group-hover:opacity-100"
-          >
-            {jam.theme && (
-              <p className="text-sm italic text-stone-600 mb-3">{jam.theme}</p>
-            )}
-
-            {jam.excerpt && (
-              <p className="text-sm text-stone-600 mb-2">{jam.excerpt}</p>
-            )}
-
-            {jam.speaker && (
-              <p className="text-xs text-stone-500">With {jam.speaker}</p>
-            )}
-          </div>
-        </div>
-
-        {/* Read session link */}
-        <div
-          className="mt-6 text-sm text-stone-500
-            opacity-0 translate-y-1
-            transition-all duration-300 ease-out
-            group-hover:opacity-100 group-hover:translate-y-0"
-        >
-          ↗ Read session
-        </div>
+      {/* Hover reveal */}
+      <div
+        className="
+          mt-4 text-sm text-stone-600
+          max-h-0 overflow-hidden
+          opacity-0
+          transition-all duration-300
+          group-hover:max-h-40
+          group-hover:opacity-100
+        "
+      >
+        {jam.description[lang]}
       </div>
+
+      {/* Read session */}
+      <span
+        className="
+          absolute bottom-5 right-6
+          text-xs text-stone-500
+          opacity-0
+          transition-opacity duration-200
+          group-hover:opacity-100
+        "
+      >
+        ↗ Read session
+      </span>
     </article>
   );
 }
