@@ -13,11 +13,11 @@ export default function HomePastJamsCollage() {
     return [...pastJams].sort(() => 0.5 - Math.random()).slice(0, 3);
   }, []);
 
-  const getTilt = (id: string) => {
-    const hash = [...id].reduce((acc, c) => acc + c.charCodeAt(0), 0);
-    const angle = hash % 3 === 0 ? 1.5 : hash % 3 === 1 ? 1 : -1.25;
-    return `${angle}deg`;
-  };
+  // Helper: deterministic tilt based on jam id
+  const getTilt = (id: string) =>
+    ["0", "2", "4", "6", "8"].some((d) => id.endsWith(d))
+      ? "1.25deg"
+      : "-1.2deg";
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-24">
@@ -35,10 +35,7 @@ export default function HomePastJamsCollage() {
             key={jam.id}
             to={`/jams/${jam.id}`}
             className="
-              group relative bg-white rounded-xl border border-stone-200
-              shadow-sm overflow-hidden
-              transition-all duration-300 ease-out
-              hover:shadow-md hover:-translate-y-1 hover:rotate-0
+            group relative h-full bg-white rounded-2xl border border-stone-200 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl
             "
             style={{ transform: `rotate(${getTilt(jam.id)})` }}
           >

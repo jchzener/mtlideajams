@@ -1,14 +1,9 @@
 // src/pages/JamDetailPage.tsx
 
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { pastJams } from "../data/pastJams";
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import LanguageToggle from "../components/LanguageToggle";
-
-// Placeholder image for now — replace with real speaker photos later
-const defaultSpeakerPhoto = "/images/speakers/default.jpg";
 
 export default function JamDetailPage() {
   const { id } = useParams();
@@ -17,45 +12,26 @@ export default function JamDetailPage() {
 
   const jam = pastJams.find((j) => j.id === id);
 
-  // State for animation
   const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
+  useEffect(() => setIsVisible(true), []);
 
   if (!jam) {
     return (
-      <div className="max-w-7xl mx-auto px-6 py-24 text-center">
-        <h1 className="font-serif text-3xl mb-4">
-          {t("jamDetail.notFound.title")}
-        </h1>
-        <p className="text-stone-600 mb-6">
-          {t("jamDetail.notFound.description")}
-        </p>
-        <Link to="/jams" className="text-stone-500 hover:underline">
-          ← {t("jamDetail.notFound.back")}
-        </Link>
-      </div>
+      <main className="bg-stone-50 min-h-screen">
+        <section className="max-w-3xl mx-auto px-6 py-32 text-center">
+          <h1 className="font-serif text-3xl mb-4">
+            {t("jamDetail.notFound.title")}
+          </h1>
+          <p className="text-stone-600 mb-6">
+            {t("jamDetail.notFound.description")}
+          </p>
+          <Link to="/jams" className="text-sm text-stone-500 hover:underline">
+            ← {t("jamDetail.notFound.back")}
+          </Link>
+        </section>
+      </main>
     );
   }
-
-  // Optional: Add speaker photo if available
-  const speakerPhoto = jam.speaker.name.includes("Fahad")
-    ? "/images/speakers/fahad.jpg"
-    : jam.speaker.name.includes("Kareem")
-    ? "/images/speakers/kareem.jpg"
-    : jam.speaker.name.includes("Rim")
-    ? "/images/speakers/rim.jpg"
-    : jam.speaker.name.includes("Hasan")
-    ? "/images/speakers/hasan.jpg"
-    : jam.speaker.name.includes("Pranav")
-    ? "/images/speakers/pranav.jpg"
-    : jam.speaker.name.includes("Patrick")
-    ? "/images/speakers/patrick.jpg"
-    : jam.speaker.name.includes("Jeffrey")
-    ? "/images/speakers/jeffrey.jpg"
-    : defaultSpeakerPhoto;
 
   return (
     <main
@@ -63,86 +39,70 @@ export default function JamDetailPage() {
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
-      <header className="max-w-7xl mx-auto px-6 pt-8 flex items-center justify-between">
+      {/* Header */}
+      <header className="max-w-3xl mx-auto px-6 pt-10">
         <Link
           to="/jams"
-          className="text-sm text-stone-500 hover:text-stone-900 transition"
+          className="text-xs tracking-widest uppercase text-stone-500 hover:text-stone-900 transition"
         >
           ← {t("jamDetail.header.backToAll")}
         </Link>
-
-        <LanguageToggle />
       </header>
 
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        {/* Speaker header */}
-        <div className="animate-fade-in-up">
-          <div className="flex items-start gap-6 mb-8">
-            <img
-              src={speakerPhoto}
-              alt={`${jam.speaker.name} - ${jam.speaker.title[lang]}`}
-              className="rounded-2xl md:rounded-3xl object-cover w-full
-           shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1)]
-           border border-stone-200"
-            />
-            <div>
-              <h1 className="font-serif text-3xl md:text-4xl">
-                {jam.speaker.name}
-              </h1>
-              <p className="text-stone-600 mt-1">{jam.speaker.title[lang]}</p>
-              <p className="text-xs text-stone-500 mt-1">
-                {jam.displayDate[lang]}
-              </p>
-            </div>
-          </div>
-        </div>
+      {/* Content */}
+      <article className="max-w-3xl mx-auto px-6 py-20">
+        {/* Intro */}
+        <header className="mb-16">
+          <h1 className="font-serif text-3xl md:text-4xl leading-tight">
+            {jam.speaker.name}
+          </h1>
 
-        {/* Detail card */}
-        <div className="bg-white rounded-xl shadow-sm p-8 animate-fadeIn">
-          {/* Theme */}
-          <div className="mb-6">
-            <h2 className="font-semibold text-lg mb-2">
-              {t("jamDetail.theme")}
-            </h2>
-            <span className="inline-block px-3 py-1 text-sm bg-stone-200 text-stone-700 rounded-full">
-              {jam.theme[lang]}
-            </span>
+          <p className="text-stone-600 mt-2">{jam.speaker.title[lang]}</p>
+
+          <div className="mt-4 text-sm text-stone-500">
+            {jam.displayDate[lang]} · Montréal
           </div>
 
-          {/* Quote */}
-          <div className="mb-6">
-            <h2 className="font-semibold text-lg mb-2">
-              {t("jamDetail.quote")}
-            </h2>
-            <blockquote className="text-lg italic text-stone-700 leading-relaxed border-l-4 border-stone-400 pl-4">
-              “{jam.quote[lang]}”
-            </blockquote>
+          <div className="mt-6 inline-block px-3 py-1 text-xs rounded-full bg-stone-200 text-stone-700">
+            {jam.theme[lang]}
           </div>
+        </header>
 
-          {/* Description */}
-          <div>
-            <h2 className="font-semibold text-lg mb-2">
-              {t("jamDetail.description")}
-            </h2>
-            <p className="text-stone-600 leading-relaxed">
-              {jam.description[lang]}
-            </p>
-          </div>
-        </div>
-      </section>
+        {/* Why it mattered */}
+        <section className="mb-20">
+          <p className="text-lg text-stone-700 leading-relaxed">
+            {jam.description[lang]}
+          </p>
+        </section>
 
-      {/* Back button */}
-      <section className="max-w-7xl mx-auto px-6 py-16 text-center">
-        <Link
-          to="/jams"
-          className="px-6 py-3 bg-stone-900 text-white rounded-xl text-sm 
-           hover:bg-stone-800 transition 
-           active:translate-y-px 
-           focus:outline-none focus:ring-2 focus:ring-stone-500"
-        >
-          {t("jamDetail.backToAll")}
-        </Link>
-      </section>
+        {/* Key idea / pull quote */}
+        <section className="mb-20">
+          <blockquote className="font-serif text-xl md:text-2xl italic text-stone-800 leading-relaxed border-l-4 border-stone-300 pl-6">
+            “{jam.quote[lang]}”
+          </blockquote>
+        </section>
+
+        {/* Join next jam */}
+        <section className="mt-24 pt-12 border-t border-stone-200">
+          <Link
+            to="/#join"
+            className="inline-flex items-center gap-2 text-sm text-stone-600 hover:text-stone-900 transition"
+          >
+            Join the next Montreal Idea Jam →
+          </Link>
+
+          <p className="mt-2 text-xs text-stone-500">
+            Small group · No pitching · Thoughtful conversations
+          </p>
+        </section>
+
+        {/* Back to archive */}
+        <footer className="mt-16">
+          <Link to="/jams" className="text-xs text-stone-500 hover:underline">
+            ← Back to archive
+          </Link>
+        </footer>
+      </article>
     </main>
   );
 }
