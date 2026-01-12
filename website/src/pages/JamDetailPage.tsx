@@ -88,33 +88,35 @@ export default function JamDetailPage() {
 
         {/* Quote */}
         <section className="mb-24">
-          <blockquote className="font-serif text-xl md:text-2xl italic text-stone-800 leading-relaxed border-l-4 border-stone-300 pl-6">
+          <blockquote className="font-serif text-xl md:text-2xl italic text-stone-700 leading-relaxed border-l-4 border-stone-300 pl-6">
             “{jam.quote[lang]}”
           </blockquote>
         </section>
 
         {/* Takeaways */}
-        {jam.takeaways && (
-          <section className="mb-24">
-            <h2 className="font-semibold text-xl mb-6">
-              {t("jamDetail.takeaways")}
-            </h2>
+        <section className="mb-24">
+          <h2 className="font-serif text-2xl mb-8">
+            {t("jamDetail.takeaways")}
+          </h2>
 
-            <ul className="space-y-4">
-              {jam.takeaways[lang].map((item, idx) => (
-                <li key={idx} className="flex items-start gap-2 text-stone-700">
-                  <span className="text-stone-500 mt-1">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
+          <ul className="grid md:grid-cols-3 gap-6">
+            {jam.takeaways[lang].map((item, i) => (
+              <li
+                key={i}
+                className="rounded-2xl bg-white p-5 border border-stone-200 shadow-sm hover:shadow-md transition"
+              >
+                <p className="text-stone-700 italic text-sm leading-relaxed">
+                  {item}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </section>
 
         {/* Resources */}
         {jam.resources && (
           <section className="mb-24">
-            <h2 className="font-semibold text-xl mb-6">
+            <h2 className="font-serif text-2xl mb-8">
               {t("jamDetail.resources")}
             </h2>
 
@@ -131,7 +133,7 @@ export default function JamDetailPage() {
                     {res.type === "course" && "🎓"}
                   </span>
                   <div>
-                    <strong>{res.label}</strong>
+                    <p>{res.label}</p>
                     {res.link && (
                       <a
                         href={res.link}
@@ -149,7 +151,7 @@ export default function JamDetailPage() {
 
         {/* Gallery */}
         {jam.gallery && jam.gallery.length > 0 && (
-          <section className="mb-24">
+          <section className="mb-12">
             <img
               src={jam.gallery[0].src}
               alt={jam.gallery[0].alt}
@@ -160,30 +162,27 @@ export default function JamDetailPage() {
           </section>
         )}
 
-        {/* Join next jam CTA */}
-        <section className="pt-12 border-t border-stone-200">
-          <div className="bg-stone-50 p-6 rounded-xl">
-            <h3 className="text-lg font-medium mb-2">
+        {/* Footer CTA */}
+        <section className="pt-8 border-stone-200">
+          <div className="max-w-md mx-auto text-center bg-stone-50 rounded-xl p-8 shadow-sm">
+            {" "}
+            <h3 className="font-serif text-2xl mb-4">
               {t("jamDetail.joinNext.cta")}
             </h3>
-            <p className="text-stone-600 mb-4">
+            <p className="text-stone-600 mb-6">
               {t("jamDetail.joinNext.note")}
             </p>
-            <Link
-              to="/#join"
-              className="inline-flex items-center gap-2 text-sm text-stone-600 hover:text-stone-900 transition"
-            >
-              {t("jamDetail.joinNext.button")} →
-            </Link>
+            <section className="max-w-7xl mx-auto px-6 py-4 text-center">
+              <Link
+                to="/"
+                className="px-6 py-3 bg-stone-900 text-white rounded-xl text-sm
+                     hover:text-green-500 transition active:translate-y-px"
+              >
+                {t("jamDetail.joinNext.button")} →
+              </Link>
+            </section>
           </div>
         </section>
-
-        {/* Back to archive */}
-        <footer className="mt-20">
-          <Link to="/jams" className="text-xs text-stone-500 hover:underline">
-            ← {t("jamDetail.backToAll")}
-          </Link>
-        </footer>
       </article>
     </main>
   );
