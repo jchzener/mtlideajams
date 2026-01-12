@@ -10,6 +10,7 @@ export interface Jam {
   isoDate: string; // Format: "YYYY-MM"
   displayDate: LocalizedText;
   speaker: {
+    image?: string;
     name: string;
     title: LocalizedText;
   };
@@ -29,6 +30,7 @@ export const pastJams: Jam[] = [
     },
     speaker: {
       name: "Fahad A.",
+      image: "/images/speakers/fahad.jpg",
       title: {
         en: "CEO of Hivo – Future of Work Platform",
         fr: "PDG de Hivo – Plateforme pour l’avenir du travail",
@@ -355,6 +357,7 @@ export const pastJams: Jam[] = [
     },
     speaker: {
       name: "Patrick Gagné",
+      image: "/images/speakers/patrick.jpg",
       title: {
         en: "Former COO, Teo Taxi",
         fr: "Ancien COO, Teo Taxi",
