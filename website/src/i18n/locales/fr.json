@@ -89,13 +89,17 @@
     "backToHome": "Retour aux prochaines Jams"
   },
   "jamDetail": {
-    "theme": "Thème",
-    "quote": "Citation clé",
-    "description": "Description",
-    "backToAll": "Retour à toutes les Jams",
-    "header": {
-      "backToAll": "Toutes les Jams passées"
+    "takeaways": "Idées clés",
+    "resources": "Ressources recommandées",
+    "joinNext": {
+      "cta": "Rejoignez la prochaine Montreal Idea Jam",
+      "note": "Groupe restreint · Pas de pitch · Conversations réfléchies",
+      "button": "Réservez votre place"
     },
+    "header": {
+      "backToAll": "Tous les Jams passés"
+    },
+    "backToAll": "Retour aux archives",
     "notFound": {
       "title": "Jam introuvable",
       "description": "La session demandée n’a pas été trouvée. Veuillez vérifier l’URL ou parcourir nos archives.",

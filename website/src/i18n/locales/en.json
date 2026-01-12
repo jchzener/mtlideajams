@@ -90,10 +90,14 @@
     "backToHome": "Back to upcoming Jams"
   },
   "jamDetail": {
-    "theme": "Theme",
-    "quote": "Key Quote",
-    "description": "Description",
-    "backToAll": "Back to all Jams",
+    "takeaways": "Key Takeaways",
+    "resources": "Recommended Resources",
+    "joinNext": {
+      "cta": "Join the next Montreal Idea Jam",
+      "note": "Small group · No pitching · Thoughtful conversations",
+      "button": "Reserve your spot"
+    },
+    "backToAll": "Back to archive",
     "header": {
       "backToAll": "All Past Jams"
     },

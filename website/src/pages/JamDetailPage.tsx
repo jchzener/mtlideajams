@@ -68,7 +68,7 @@ export default function JamDetailPage() {
             <p className="text-stone-600 mt-2">{jam.speaker.title[lang]}</p>
 
             <div className="mt-4 text-sm text-stone-500">
-              {jam.displayDate[lang]} · Montréal
+              {jam.displayDate[lang]} · {jam.location[lang]}
             </div>
 
             <div className="mt-4 inline-block px-3 py-1 text-xs rounded-full bg-stone-200 text-stone-700">
@@ -77,11 +77,13 @@ export default function JamDetailPage() {
           </div>
         </header>
 
-        {/* Description */}
-        <section className="mb-20">
-          <p className="text-lg text-stone-700 leading-relaxed">
-            {jam.description[lang]}
-          </p>
+        {/* Long description */}
+        <section className="mb-20 space-y-6">
+          {jam.descriptionLong[lang].split("\n\n").map((paragraph, idx) => (
+            <p key={idx} className="text-lg text-stone-700 leading-relaxed">
+              {paragraph}
+            </p>
+          ))}
         </section>
 
         {/* Quote */}
@@ -91,24 +93,95 @@ export default function JamDetailPage() {
           </blockquote>
         </section>
 
-        {/* Join next jam */}
-        <section className="pt-12 border-t border-stone-200">
-          <Link
-            to="/#join"
-            className="inline-flex items-center gap-2 text-sm text-stone-600 hover:text-stone-900 transition"
-          >
-            Join the next Montreal Idea Jam →
-          </Link>
+        {/* Takeaways */}
+        {jam.takeaways && (
+          <section className="mb-24">
+            <h2 className="font-semibold text-xl mb-6">
+              {t("jamDetail.takeaways")}
+            </h2>
 
-          <p className="mt-2 text-xs text-stone-500">
-            Small group · No pitching · Thoughtful conversations
-          </p>
+            <ul className="space-y-4">
+              {jam.takeaways[lang].map((item, idx) => (
+                <li key={idx} className="flex items-start gap-2 text-stone-700">
+                  <span className="text-stone-500 mt-1">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {/* Resources */}
+        {jam.resources && (
+          <section className="mb-24">
+            <h2 className="font-semibold text-xl mb-6">
+              {t("jamDetail.resources")}
+            </h2>
+
+            <div className="space-y-4">
+              {jam.resources.map((res, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-start gap-2 text-stone-600"
+                >
+                  <span className="text-stone-500 mt-1">
+                    {res.type === "book" && "📘"}
+                    {res.type === "talk" && "🎧"}
+                    {res.type === "article" && "📄"}
+                    {res.type === "course" && "🎓"}
+                  </span>
+                  <div>
+                    <strong>{res.label}</strong>
+                    {res.link && (
+                      <a
+                        href={res.link}
+                        className="ml-1 text-stone-500 hover:text-stone-900"
+                      >
+                        →
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Gallery */}
+        {jam.gallery && jam.gallery.length > 0 && (
+          <section className="mb-24">
+            <img
+              src={jam.gallery[0].src}
+              alt={jam.gallery[0].alt}
+              className="rounded-2xl w-full object-cover
+                         shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1)]
+                         border border-stone-200"
+            />
+          </section>
+        )}
+
+        {/* Join next jam CTA */}
+        <section className="pt-12 border-t border-stone-200">
+          <div className="bg-stone-50 p-6 rounded-xl">
+            <h3 className="text-lg font-medium mb-2">
+              {t("jamDetail.joinNext.cta")}
+            </h3>
+            <p className="text-stone-600 mb-4">
+              {t("jamDetail.joinNext.note")}
+            </p>
+            <Link
+              to="/#join"
+              className="inline-flex items-center gap-2 text-sm text-stone-600 hover:text-stone-900 transition"
+            >
+              {t("jamDetail.joinNext.button")} →
+            </Link>
+          </div>
         </section>
 
-        {/* Back */}
-        <footer className="mt-16">
+        {/* Back to archive */}
+        <footer className="mt-20">
           <Link to="/jams" className="text-xs text-stone-500 hover:underline">
-            ← Back to archive
+            ← {t("jamDetail.backToAll")}
           </Link>
         </footer>
       </article>
