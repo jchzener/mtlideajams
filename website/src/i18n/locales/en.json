@@ -5,84 +5,112 @@
   },
   "home": {
     "hero": {
-      "title": "Monthly conversations for people serious about entrepreneurship.",
-      "subtitle": "No slides. No pitching. Just honest stories and discussions.",
+      "title": "A space for people who are building or actually thinking about it.",
+      "subtitle": "No slides. No pitching. Just honest conversations about the decisions behind the work.",
       "cta": "Join the next Jam",
       "footer": "Montreal · In-person · Once a month",
       "imageAlt": "People in conversation at Montreal Idea Jams"
     },
     "nextJam": {
-      "eyebrow": "Next conversation",
-      "title": "January 30 · An honest conversation about building",
-      "context": "Our next Montreal Idea Jam is an in-person conversation — no slides, no pitching, just people thinking out loud together.",
-      "speakerIntro": "This month, we’re joined by",
-      "speakerName": "Marie L.",
-      "speakerTitle": "Co-founder of CleanLoop",
-      "quote": "The hardest part wasn’t the technology — it was believing the idea was worth pursuing.",
+      "eyebrow": "New Year Planning",
+      "title": "January 30 · Building Together in 2026",
+      "context": "We’re kicking off 2026 with a planning session — no speaker, as group we'll think and plan together what matters most this year.",
+      "speakerIntro": "Featuring",
+      "speakerName": "You & the Community",
+      "speakerTitle": "Co-creators of 2026’s themes",
+      "quote": "2026 is off to a great start!",
       "detailsTitle": "Details",
-      "date": "January 27, 2026",
+      "date": "January 30, 2026",
       "dateLabel": "Date",
-      "time": "6:30 PM – 8:30 PM",
-      "location": "Café Névé · Plateau",
+      "time": "7:00 PM – 10:00 PM",
+      "location": "Downtown Montreal",
       "note": "In-person · Limited spots",
       "details": "Details",
       "timeLabel": "Time",
       "locationLabel": "Location",
       "notes": "In-person · Limited spots",
-      "cta": "Claim your spot"
+      "rsvp": "Limited seats · RSVP recommended",
+      "cta": "Reserve your spot"
     },
+    "nextJam_old": {
+      "eyebrow": "Next conversation",
+      "title": "January 30 · An honest conversation about building",
+      "context": "Montreal Idea Jams are small, in-person conversations where builders share something real they’re working through — and let the room think with them.",
+      "speakerIntro": "This month’s conversation starts with",
+      "speakerName": "Marie L.",
+      "speakerTitle": "Co-founder of CleanLoop",
+      "quote": "The hardest part wasn’t the technology — it was deciding the idea was worth committing years of my life to.",
+      "detailsTitle": "Details",
+      "dateLabel": "Date",
+      "date": "January 27, 2026",
+      "timeLabel": "Time",
+      "time": "6:30 PM – 8:30 PM",
+      "locationLabel": "Location",
+      "location": "Café Névé · Plateau",
+      "notes": "In-person · Limited spots",
+      "rsvp": "Limited seats · RSVP recommended",
+      "cta": "Reserve your spot"
+    },
+
     "past": {
-      "title": "Past conversations included",
+      "title": "Some past conversations",
       "viewAll": "View all past Jams"
     },
+
     "jamExperience": {
       "title": "What a Jam feels like",
-      "p1": "You arrive with a drink, not a pitch.\nConversations start loosely and deepen naturally.",
-      "p2": "Someone shares a real problem they’re thinking through.\nOthers listen, question, and build on it.",
-      "p3": "By the end of the night, you leave with fewer answers —\nand better questions."
+      "p1": "You arrive with a drink — not a pitch.\nConversations start loosely, then sharpen.",
+      "p2": "Someone shares a real decision, doubt, or problem they’re sitting with.\nThe room listens carefully, then thinks together.",
+      "p3": "You leave without a playbook —\nbut with better questions and clearer instincts."
     },
+
     "why": {
       "title": "Why Montreal Idea Jams exist",
       "thesis": "Most entrepreneurial spaces optimize for visibility.\nWe optimize for thinking.",
-      "p1": "We created MIJ because meaningful conversations rarely happen in rooms designed for pitching, networking, or personal branding.",
-      "p2": "Our best sessions happen when people slow down, share something unfinished, and let others think with them — without trying to impress.",
-      "p3": "MIJ exists for people who care more about clarity than applause, and progress than polish."
+      "p1": "Entrepreneurship is usually discussed in rooms built for pitching, networking, or personal branding.",
+      "p2": "We created MIJ to make space for unfinished thoughts, real trade-offs, and conversations that don’t fit on slides.",
+      "p3": "This is a room for people who care more about clarity than applause — and progress more than polish."
     },
+
     "credibility": {
       "title": "Who’s been in the room",
-      "intro": "Over the past months, these conversations have brought together founders, operators, investors, and builders from very different paths — all showing up to think, not pitch.",
+      "intro": "Over time, these conversations have brought together people at very different stages — all showing up to think seriously, not perform.",
       "people": [
         "Founders building early-stage startups",
         "Operators scaling teams and systems",
         "People acquiring and running small businesses",
-        "Investors evaluating deals and opportunities",
+        "Investors evaluating ideas and opportunities",
         "Domain experts in AI, climate, gaming, legal, and finance"
       ],
       "topicsTitle": "Some past conversations",
       "topics": [
-        "Acquiring small companies (reprenariat)",
+        "Buying and running small companies",
         "Evaluating early-stage investments",
-        "AI use cases beyond the hype",
+        "Using AI beyond the hype",
         "Scaling without breaking culture",
-        "What entrepreneurship actually feels like"
+        "What entrepreneurship actually feels like day to day"
       ]
     },
-    "convoImageAlt": "Small group discussion during a Jam",
+
     "format": {
       "title": "What a Jam looks like",
-      "item1": "One guest entrepreneur",
-      "item2": "Stories, lessons, and surprises",
+      "item1": "One guest builder",
+      "item2": "Stories, trade-offs, and surprises",
       "item3": "Open questions and group discussion"
     },
-    "peopleImageAlt": "People talking, not presenting",
+
     "who": {
       "title": "Who should join",
-      "description": "People curious about entrepreneurship and seriously considering making the jump — or already in it."
+      "description": "People seriously thinking about entrepreneurship — whether they’re about to start, already building, or quietly questioning what comes next."
     },
+
     "finalCta": {
-      "title": "Come for the conversation. Stay for the thinking.",
+      "title": "Come for the conversation.\nStay for the thinking.",
       "cta": "Join the conversation"
-    }
+    },
+
+    "convoImageAlt": "Small group discussion during a Jam",
+    "peopleImageAlt": "People talking, listening, and thinking together"
   },
   "pastJams": {
     "title": "Past Montreal Idea Jams",
