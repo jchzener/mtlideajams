@@ -31,7 +31,7 @@ export default function PastJamsPage() {
       <PastJamsGrid />
 
       {/* Back CTA */}
-      <Section className="py-16 text-center">
+      <Section className="py-20 text-center">
         <Link to="/">
           <PrimaryButton>{t("pastJams.backToUpcoming")}</PrimaryButton>
         </Link>

@@ -5,7 +5,9 @@ import convoImg from "../assets/images/mij-conversation.jpg";
 import peopleImg from "../assets/images/mij-people.jpg";
 import { useTranslation } from "react-i18next";
 import HomePastJamsCollage from "../components/HomePastJamsCollage";
-import LanguageToggle from "../components/LanguageToggle";
+import SiteHeader from "../components/SiteHeader";
+import Section from "../components/Section";
+import PrimaryButton from "../components/PrimaryButton";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -13,23 +15,7 @@ export default function Home() {
   return (
     <main className="bg-stone-50 text-stone-900">
       {/* HEADER */}
-      <header className="max-w-7xl mx-auto px-6 pt-10 flex items-center justify-between">
-        <span className="text-xs tracking-widest uppercase text-stone-500">
-          Montreal Idea Jams
-        </span>
-
-        <nav className="flex items-center gap-6 text-sm text-stone-600">
-          <a href="#join" className="hover:text-stone-900 transition">
-            {t("nav.join")}
-          </a>
-
-          <a href="/jams" className="hover:text-stone-900 transition">
-            {t("nav.past")}
-          </a>
-
-          <LanguageToggle />
-        </nav>
-      </header>
+      <SiteHeader />
 
       {/* HERO */}
       <section className="max-w-7xl mx-auto px-6 py-28 grid grid-cols-1 lg:grid-cols-12 gap-14">
@@ -45,7 +31,9 @@ export default function Home() {
             {t("home.hero.cta")}
           </button>
 
-          <p className="text-xs text-stone-500 mt-5">{t("home.hero.footer")}</p>
+          <p className="text-xs font-bold text-stone-500 mt-5">
+            {t("home.hero.footer")}
+          </p>
         </div>
 
         <div className="lg:col-span-7">
@@ -68,13 +56,13 @@ export default function Home() {
           {/* Note */}
           <div
             className="
-        bg-stone-100
-        border border-stone-200
-        rounded-2xl
-        px-10 py-14 md:px-16
-        shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)]
-        -rotate-1
-      "
+            bg-stone-100
+            border border-stone-200
+            rounded-2xl
+            px-10 py-14 md:px-16
+            shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)]
+            -rotate-1
+          "
           >
             <div className="grid grid-cols-1 md:grid-cols-12 gap-14">
               {/* LEFT */}
@@ -152,7 +140,7 @@ export default function Home() {
                   </button>
 
                   <p className="text-xs text-stone-500 text-center mt-4">
-                    Limited seats · RSVP recommended
+                    {t("home.nextJam.rsvp")}
                   </p>
                 </div>
               </div>
@@ -213,19 +201,20 @@ export default function Home() {
       <HomePastJamsCollage />
 
       {/* FINAL CTA */}
-      <section className="max-w-7xl mx-auto px-6 py-24 text-center">
-        <p className="text-stone-600 text-lg mb-10 max-w-4xl mx-auto">
-          {t("home.who.description")}
-        </p>
+      <Section className="py-20 text-center">
+        <div className="max-w-4xl mx-auto px-6">
+          <p className="text-stone-600 text-lg mb-10">
+            {t("home.who.description")}
+          </p>
 
-        <h2 className="text-3xl font-semibold mb-6">
-          {t("home.finalCta.title")}
-        </h2>
-
-        <button className="bg-stone-900 text-white px-10 py-4 rounded-xl text-sm hover:bg-stone-800 transition active:translate-y-px">
-          {t("home.finalCta.cta")}
-        </button>
-      </section>
+          <h2 className="text-3xl font-semibold mb-6">
+            {t("home.finalCta.title")}
+          </h2>
+          <a href="https://tally.so/r/wogA4V" target="_blank">
+            <PrimaryButton>{t("home.finalCta.cta")}</PrimaryButton>
+          </a>
+        </div>
+      </Section>
     </main>
   );
 }
