@@ -72,7 +72,7 @@
     "peopleImageAlt": "Des gens qui discutent, pas qui présentent",
     "past": {
       "title": "Parmi nos invité·es précédents",
-      "viewAll": "Voir toutes les Jams passées"
+      "viewAll": "Voir tous les Jams passés"
     },
     "who": {
       "title": "À qui s’adresse l’événement ?",
@@ -80,13 +80,16 @@
     },
     "finalCta": {
       "title": "Venez pour la conversation.\nRestez pour la réflexion.",
-      "cta": "Participer à la prochaine Jam"
+      "cta": "Participer au prochain Jam"
     }
   },
   "pastJams": {
-    "title": "Archives : Montreal Idea Jams",
+    "title": "Montreal Idea Jams passés",
     "subtitle": "18 mois de conversations sincères avec des fondatrices, opérateurs et bâtisseurs qui ont emprunté le chemin de l’entrepreneuriat.",
-    "backToHome": "Retour aux prochaines Jams"
+    "backToUpcoming": "Retour au prochain Jams",
+    "header": {
+      "backToHome": "Montreal Idea Jams"
+    }
   },
   "jamDetail": {
     "takeaways": "Idées clés",
@@ -99,11 +102,11 @@
     "header": {
       "backToAll": "Tous les Jams passés"
     },
-    "backToAll": "Retour aux archives",
+    "backToAll": "Retour aux Jams passés",
     "notFound": {
       "title": "Jam introuvable",
-      "description": "La session demandée n’a pas été trouvée. Veuillez vérifier l’URL ou parcourir nos archives.",
-      "back": "Retour à toutes les Jams"
+      "description": "La session demandée n’a pas été trouvée. Veuillez vérifier l’URL ou parcourir nos  Jams passés.",
+      "back": "Retour à tous les Jams"
     }
   }
 }

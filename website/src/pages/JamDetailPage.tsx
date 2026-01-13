@@ -1,9 +1,10 @@
-// src/pages/JamDetailPage.tsx
-
 import { useParams, Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { pastJams } from "../data/pastJams";
-import { useEffect, useState } from "react";
+
+import Section from "../components/Section";
+import SectionTitle from "../components/SectionTitle";
+import PaperCard from "../components/PaperCard";
 
 export default function JamDetailPage() {
   const { id } = useParams();
@@ -14,9 +15,6 @@ export default function JamDetailPage() {
   const lang = forcedLang ?? (i18n.language.startsWith("fr") ? "fr" : "en");
 
   const jam = pastJams.find((j) => j.id === id);
-
-  const [isVisible, setIsVisible] = useState(false);
-  useEffect(() => setIsVisible(true), []);
 
   if (!jam) {
     return (
@@ -34,11 +32,7 @@ export default function JamDetailPage() {
   }
 
   return (
-    <main
-      className={`bg-stone-50 text-stone-900 min-h-screen transition-opacity duration-500 ${
-        isVisible ? "opacity-100" : "opacity-0"
-      }`}
-    >
+    <main className="bg-stone-50 text-stone-900 min-h-screen">
       {/* Header */}
       <header className="max-w-3xl mx-auto px-6 pt-10">
         <Link
@@ -51,13 +45,11 @@ export default function JamDetailPage() {
 
       <article className="max-w-3xl mx-auto px-6 py-20">
         {/* Speaker intro */}
-        <header className="mb-16 flex flex-col md:flex-row gap-8">
+        <header className="mb-20 flex flex-col md:flex-row gap-8">
           <img
             src={jam.speaker.image}
             alt={jam.speaker.name}
-            className="w-32 h-32 md:w-40 md:h-40 rounded-2xl object-cover
-                       border border-stone-200
-                       shadow-sm"
+            className="w-36 h-36 rounded-2xl object-cover border border-stone-200 shadow-sm"
           />
 
           <div>
@@ -67,43 +59,43 @@ export default function JamDetailPage() {
 
             <p className="text-stone-600 mt-2">{jam.speaker.title[lang]}</p>
 
-            <div className="mt-4 text-sm text-stone-500">
+            <p className="mt-4 text-sm text-stone-500">
               {jam.displayDate[lang]} · {jam.location[lang]}
-            </div>
+            </p>
 
-            <div className="mt-4 inline-block px-3 py-1 text-xs rounded-full bg-stone-200 text-stone-700">
+            <span className="inline-block mt-4 px-3 py-1 text-xs rounded-full bg-stone-200 text-stone-700">
               {jam.theme[lang]}
-            </div>
+            </span>
           </div>
         </header>
 
-        {/* Long description */}
-        <section className="mb-20 space-y-6">
-          {jam.descriptionLong[lang].split("\n\n").map((paragraph, idx) => (
-            <p key={idx} className="text-lg text-stone-700 leading-relaxed">
-              {paragraph}
+        {/* Description */}
+        <Section>
+          {jam.descriptionLong[lang].split("\n\n").map((p, i) => (
+            <p key={i} className="text-lg text-stone-700 leading-relaxed mb-6">
+              {p}
             </p>
           ))}
-        </section>
+        </Section>
 
         {/* Quote */}
-        <section className="mb-24">
-          <blockquote className="font-serif text-xl md:text-2xl italic text-stone-700 leading-relaxed border-l-4 border-stone-300 pl-6">
-            “{jam.quote[lang]}”
-          </blockquote>
-        </section>
+        <Section>
+          <PaperCard rotate={-1}>
+            <blockquote className="font-serif text-xl md:text-2xl italic text-stone-700">
+              “{jam.quote[lang]}”
+            </blockquote>
+          </PaperCard>
+        </Section>
 
         {/* Takeaways */}
-        <section className="mb-24">
-          <h2 className="font-serif text-2xl mb-8">
-            {t("jamDetail.takeaways")}
-          </h2>
+        <Section>
+          <SectionTitle>{t("jamDetail.takeaways")}</SectionTitle>
 
           <ul className="grid md:grid-cols-3 gap-6">
             {jam.takeaways[lang].map((item, i) => (
               <li
                 key={i}
-                className="rounded-2xl bg-white p-5 border border-stone-200 shadow-sm hover:shadow-md transition"
+                className="rounded-2xl bg-white p-5 border border-stone-200 shadow-sm"
               >
                 <p className="text-stone-700 italic text-sm leading-relaxed">
                   {item}
@@ -111,78 +103,82 @@ export default function JamDetailPage() {
               </li>
             ))}
           </ul>
-        </section>
+        </Section>
 
         {/* Resources */}
         {jam.resources && (
-          <section className="mb-24">
-            <h2 className="font-serif text-2xl mb-8">
-              {t("jamDetail.resources")}
-            </h2>
+          <Section>
+            <SectionTitle>{t("jamDetail.resources")}</SectionTitle>
 
-            <div className="space-y-4">
+            <div className="rounded-2xl bg-white border border-stone-200 p-6 space-y-4">
               {jam.resources.map((res, idx) => (
                 <div
                   key={idx}
-                  className="flex items-start gap-2 text-stone-600"
+                  className="flex items-start gap-3 text-stone-600"
                 >
-                  <span className="text-stone-500 mt-1">
+                  <span className="mt-1">
                     {res.type === "book" && "📘"}
                     {res.type === "talk" && "🎧"}
                     {res.type === "article" && "📄"}
                     {res.type === "course" && "🎓"}
                   </span>
+
                   <div>
                     <p>{res.label}</p>
                     {res.link && (
                       <a
                         href={res.link}
-                        className="ml-1 text-stone-500 hover:text-stone-900"
+                        className="text-sm text-stone-500 hover:text-stone-900"
                       >
-                        →
+                        View →
                       </a>
                     )}
                   </div>
                 </div>
               ))}
             </div>
-          </section>
+          </Section>
         )}
 
         {/* Gallery */}
-        {jam.gallery && jam.gallery.length > 0 && (
-          <section className="mb-12">
+        {jam.gallery?.length > 0 && (
+          <Section className="mb-12">
             <img
               src={jam.gallery[0].src}
               alt={jam.gallery[0].alt}
-              className="rounded-2xl w-full object-cover
-                         shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1)]
-                         border border-stone-200"
+              className="rounded-2xl w-full object-cover border border-stone-200 shadow-sm"
             />
-          </section>
+          </Section>
         )}
 
-        {/* Footer CTA */}
-        <section className="pt-8 border-stone-200">
-          <div className="max-w-md mx-auto text-center bg-stone-50 rounded-xl p-8 shadow-sm">
-            {" "}
+        {/* Join next jam */}
+        <Section className="pt-12">
+          <PaperCard rotate={1}>
             <h3 className="font-serif text-2xl mb-4">
               {t("jamDetail.joinNext.cta")}
             </h3>
+
             <p className="text-stone-600 mb-6">
               {t("jamDetail.joinNext.note")}
             </p>
-            <section className="max-w-7xl mx-auto px-6 py-4 text-center">
-              <Link
-                to="/"
-                className="px-6 py-3 bg-stone-900 text-white rounded-xl text-sm
-                     hover:text-green-500 transition active:translate-y-px"
-              >
-                {t("jamDetail.joinNext.button")} →
-              </Link>
-            </section>
-          </div>
-        </section>
+
+            <a
+              href="https://tally.so/r/wogA4V"
+              target="_blank"
+              className="inline-block px-6 py-3 bg-stone-900 text-white rounded-xl text-sm
+                         hover:bg-stone-800 transition active:translate-y-px"
+            >
+              {t("jamDetail.joinNext.button")} →
+            </a>
+          </PaperCard>
+        </Section>
+
+        {/* Back */}
+        <footer className="mt-20 text-right">
+          <Link to="/jams" className="text-sm text-stone-500 hover:underline">
+            ← {t("jamDetail.backToAll")}
+          </Link>
+        </footer>
       </article>
     </main>
   );
