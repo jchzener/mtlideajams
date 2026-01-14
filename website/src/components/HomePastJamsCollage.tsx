@@ -22,11 +22,7 @@ export default function HomePastJamsCollage() {
     <section className="max-w-7xl mx-auto px-6 py-24">
       <h2 className="font-serif text-3xl mb-10">{t("home.past.title")}</h2>
 
-      <p className="text-stone-600 mb-8 max-w-2xl">
-        Over the past months, these conversations have brought together
-        founders, operators, investors, and builders — all showing up to think,
-        not pitch.
-      </p>
+      <p className="text-stone-600 mb-8 max-w-6xl">{t("home.past.subtitle")}</p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {pickedJams.map((jam) => (

@@ -173,7 +173,8 @@ export default function JamDetailPage() {
               alt={gallery[0].alt}
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
-                target.src = "/images/jams/default.jpg";
+                const randomIndex = Math.floor(Math.random() * 7) + 1;
+                target.src = `/images/jams/default_${randomIndex}.jpg`;
               }}
               className="rounded-2xl w-full object-cover border border-stone-200 shadow-sm"
             />

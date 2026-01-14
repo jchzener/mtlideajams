@@ -1,8 +1,8 @@
 // src/pages/Home.tsx
 
-import heroImg from "../assets/images/mij-hero.jpg";
-import convoImg from "../assets/images/mij-conversation.jpg";
-import peopleImg from "../assets/images/mij-people.jpg";
+import heroImg from "/images/homepage/mij-hero.jpg";
+import convoImg from "/images/homepage/mij-conversation.jpg";
+import peopleImg from "/images/homepage/mij-people.jpg";
 import { useTranslation } from "react-i18next";
 import HomePastJamsCollage from "../components/HomePastJamsCollage";
 import SiteHeader from "../components/SiteHeader";
