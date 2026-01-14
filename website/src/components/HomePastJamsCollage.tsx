@@ -13,7 +13,6 @@ export default function HomePastJamsCollage() {
     return [...pastJams].sort(() => 0.5 - Math.random()).slice(0, 3);
   }, []);
 
-  // Helper: deterministic tilt based on jam id
   const getTilt = (id: string) =>
     ["0", "2", "4", "6", "8"].some((d) => id.endsWith(d))
       ? "1.25deg"
@@ -21,7 +20,7 @@ export default function HomePastJamsCollage() {
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-24">
-      <h2 className="font-serif text-2xl mb-8">{t("home.past.title")}</h2>
+      <h2 className="font-serif text-3xl mb-10">{t("home.past.title")}</h2>
 
       <p className="text-stone-600 mb-8 max-w-2xl">
         Over the past months, these conversations have brought together
