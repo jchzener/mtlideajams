@@ -57,6 +57,10 @@ export default function JamDetailPage() {
           <img
             src={jam.speaker.image}
             alt={jam.speaker.name}
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = "/images/speakers/default.jpg";
+            }}
             className="w-36 h-36 rounded-2xl object-cover border border-stone-200 shadow-sm"
           />
 
@@ -165,8 +169,12 @@ export default function JamDetailPage() {
         {gallery.length > 0 && (
           <Section>
             <img
-              src={gallery[0].src || "/images/jams/default.jpg"}
-              alt={gallery[0].alt || `Group photo — ${jam.displayDate[lang]}`}
+              src={gallery[0].src}
+              alt={gallery[0].alt}
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = "/images/jams/default.jpg";
+              }}
               className="rounded-2xl w-full object-cover border border-stone-200 shadow-sm"
             />
           </Section>
