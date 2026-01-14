@@ -1,56 +1,31 @@
 // src/data/pastJams.ts
 
-export interface LocalizedText {
-  en: string;
-  fr: string;
-}
-
-export interface LocalizedArray {
-  en: string[];
-  fr: string[];
-}
-
-export interface Resource {
-  label: string;
-  type: "book" | "talk" | "article" | "course";
-  link?: string;
-}
-
-export interface GalleryItem {
-  src: string;
-  alt: string;
-}
-
-export interface Jam {
-  id: string;
-  isoDate: string; // YYYY-MM
-  location: LocalizedText;
-  displayDate: LocalizedText;
-
-  speaker: {
-    name: string;
-    title: LocalizedText;
-    image: string; // public path
-  };
-
-  theme: LocalizedText;
-  quote: LocalizedText;
-
-  description: LocalizedText;
-  descriptionLong: LocalizedText;
-
-  takeaways: LocalizedArray;
-  resources: Resource[];
-  gallery: GalleryItem[];
-}
+import { Jam } from "../types/jam";
 
 export const pastJams: Jam[] = [
-  // ─── 2025 ───────────────────────────────────────────────
   {
     id: "jam-2025-09",
-    isoDate: "2025-09",
-    location: { en: "Montreal", fr: "Montréal" },
-    displayDate: { en: "September 2025", fr: "septembre 2025" },
+    readingTime: 4,
+    keyQuestion: {
+      en: "What does the future of work look like when context matters more than location?",
+      fr: "À quoi ressemble l’avenir du travail quand le contexte compte plus que le lieu ?",
+    },
+    context: {
+      en: "As remote work settles into routine, Fahad’s journey building Hivo revealed that the real challenge isn’t logistics—it’s designing spaces where people choose to show up fully.",
+      fr: "Alors que le télétravail devient routinier, le parcours de Fahad à la tête de Hivo a révélé que le vrai défi n’est pas logistique — c’est concevoir des espaces où les gens choisissent de se présenter pleinement.",
+    },
+    theme: {
+      en: "Future of Work & Entrepreneurial Journeys",
+      fr: "Avenir du travail et parcours entrepreneurial",
+    },
+    displayDate: {
+      en: "September 2025",
+      fr: "septembre 2025",
+    },
+    location: {
+      en: "Montreal",
+      fr: "Montréal",
+    },
     speaker: {
       name: "Fahad A.",
       title: {
@@ -59,41 +34,37 @@ export const pastJams: Jam[] = [
       },
       image: "/images/speakers/fahad.jpg",
     },
-    theme: {
-      en: "Future of Work & Entrepreneurial Journeys",
-      fr: "Avenir du travail et parcours entrepreneurial",
-    },
-    quote: {
-      en: "The future of work isn’t remote or in-office — it’s about designing the right context for collaboration.",
-      fr: "L’avenir du travail n’est ni le télétravail ni le bureau — c’est le contexte de collaboration qu’on conçoit.",
-    },
     description: {
-      en: "A deep dive into the future of work with the founder of Hivo.",
-      fr: "Une plongée dans l’avenir du travail avec le fondateur de Hivo.",
+      en: "On building a platform that rethinks how remote professionals find meaningful workspaces.",
+      fr: "Sur la création d’une plateforme qui repense l’accès aux espaces de travail pour les professionnels à distance.",
     },
     descriptionLong: {
-      en: "Fahad shared his journey building Hivo, a platform rethinking how remote professionals access meaningful workspaces. Beyond product and traction, the discussion explored leadership, timing, and the realities of building in an uncertain labor market.",
-      fr: "Fahad a partagé son parcours à la tête de Hivo, une plateforme qui repense l’accès aux espaces de travail pour les professionnels à distance. La discussion a dépassé le produit pour aborder le leadership, le timing et les réalités du marché du travail.",
+      en: "Fahad shared his journey building Hivo, a platform connecting freelancers and remote professionals with ideal workspaces. Beyond product and traction, the discussion explored leadership, timing, and the realities of building in an uncertain labor market.\n\nThe session closed with a group reflection on key themes for the rest of 2025—emphasizing that the future of work isn’t about where you sit, but the quality of attention you bring.",
+      fr: "Fahad a partagé son parcours à la tête de Hivo, une plateforme qui connecte freelances et professionnels nomades avec des espaces de travail adaptés. La soirée s’est conclue par une réflexion collective sur les thèmes clés à explorer d’ici la fin de 2025 — soulignant que l’avenir du travail ne dépend pas de l’endroit où vous êtes assis, mais de la qualité d’attention que vous apportez.",
+    },
+    quote: {
+      en: "The future of work isn’t remote or in-office—it’s about finding the right context for deep collaboration.",
+      fr: "L’avenir du travail, ce n’est ni le télétravail ni le bureau — c’est trouver le bon contexte pour collaborer en profondeur.",
     },
     takeaways: {
       en: [
-        "The future of work is contextual, not binary.",
-        "Startups must adapt faster than labor norms.",
-        "Leadership clarity matters more than flexibility perks.",
+        "Meaningful collaboration requires intentional design—not just flexibility.",
+        "Startups must adapt faster than labor norms evolve.",
+        "Leadership clarity matters more than workplace perks.",
       ],
       fr: [
-        "L’avenir du travail est contextuel, pas binaire.",
+        "La collaboration significative exige une conception intentionnelle — pas seulement de la flexibilité.",
         "Les startups doivent évoluer plus vite que les normes du travail.",
-        "La clarté du leadership compte plus que les avantages flexibles.",
+        "La clarté du leadership compte plus que les avantages liés au lieu de travail.",
       ],
     },
     resources: [
       {
-        label: "Remote: Office Not Required",
         type: "book",
+        label: "Remote: Office Not Required",
         link: "https://basecamp.com/books/remote",
       },
-      { label: "The Future of Work – MIT Talk", type: "talk" },
+      { type: "talk", label: "The Future of Work – MIT Talk" },
     ],
     gallery: [
       {
@@ -104,32 +75,46 @@ export const pastJams: Jam[] = [
   },
   {
     id: "jam-2025-08",
-    isoDate: "2025-08",
-    location: { en: "Montreal", fr: "Montréal" },
-    displayDate: { en: "August 2025", fr: "août 2025" },
-    speaker: {
-      name: "Kareem Rahaman & Rim",
-      title: {
-        en: "Growth Lead, Club PKL & Founder, SoraRisk",
-        fr: "Responsable croissance, Club PKL & Fondatrice, SoraRisk",
-      },
-      image: "/images/speakers/kareem-rim.jpg",
+    readingTime: 5,
+    keyQuestion: {
+      en: "Where are the billion-dollar opportunities hiding in overlooked spaces?",
+      fr: "Où se cachent les opportunités à un milliard dans les espaces négligés ?",
+    },
+    context: {
+      en: "While AI dominates headlines, this session spotlighted two quiet frontiers: the explosive growth of pickleball as a community-driven business, and risk intelligence for emerging markets—where human insight beats data alone.",
+      fr: "Alors que l’IA domine les manchettes, cette session a mis en lumière deux frontières discrètes : la croissance fulgurante du pickleball comme entreprise communautaire, et l’intelligence du risque pour les marchés émergents — où l’insight humain l’emporte sur les données seules.",
     },
     theme: {
       en: "Emerging Industries & Founder Stories",
       fr: "Industries émergentes et récits de fondatrices",
     },
+    displayDate: {
+      en: "August 2025",
+      fr: "août 2025",
+    },
+    location: {
+      en: "Montreal",
+      fr: "Montréal",
+    },
+    speaker: {
+      name: "Kareem Rahaman & Rim",
+      title: {
+        en: "Growth Lead at Club PKL & Founder of SoraRisk",
+        fr: "Responsable croissance chez Club PKL & Fondatrice de SoraRisk",
+      },
+      image: "/images/speakers/kareem-rim.jpg",
+    },
+    description: {
+      en: "On pickleball’s rise and building risk assessment tools for volatile markets.",
+      fr: "Sur la montée du pickleball et la création d’outils d’évaluation du risque pour les marchés instables.",
+    },
+    descriptionLong: {
+      en: "Kareem took us inside the explosive growth of pickleball as a sport and business. Rim then presented SoraRisk, her startup building risk assessment tools for dynamic environments.\n\nThe conversation revealed a shared truth: the next big opportunities aren’t in crowded spaces—they’re in overlooked ones where community, trust, and local knowledge create defensible moats.",
+      fr: "Kareem nous a plongés dans la croissance fulgurante du pickleball, à la fois comme sport et comme opportunité commerciale. Rim a ensuite présenté SoraRisk, sa startup qui développe des outils d’évaluation du risque pour des environnements dynamiques.\n\nLa discussion a révélé une vérité commune : les prochaines grandes opportunités ne se trouvent pas dans les espaces saturés — elles sont dans les domaines négligés où la communauté, la confiance et la connaissance locale créent des avantages durables.",
+    },
     quote: {
       en: "The next billion-dollar business might be in pickleball—or in risk intelligence for emerging markets.",
       fr: "La prochaine entreprise à un milliard pourrait être dans le pickleball… ou dans l’intelligence du risque pour les marchés émergents.",
-    },
-    description: {
-      en: "Exploring niche sports and risk intelligence as entrepreneurial frontiers.",
-      fr: "Explorer les sports de niche et l’intelligence du risque comme frontières entrepreneuriales.",
-    },
-    descriptionLong: {
-      en: "Kareem unpacked the explosive rise of pickleball as both sport and business model. Rim then shared how SoraRisk is building tools to assess geopolitical and operational risk for startups in volatile regions — a conversation on spotting opportunity in overlooked spaces.",
-      fr: "Kareem a décortiqué la montée fulgurante du pickleball en tant que sport et modèle économique. Rim a ensuite expliqué comment SoraRisk développe des outils pour évaluer les risques géopolitiques et opérationnels pour les startups dans des régions instables — une discussion sur la détection d’opportunités dans les espaces négligés.",
     },
     takeaways: {
       en: [
@@ -145,10 +130,10 @@ export const pastJams: Jam[] = [
     },
     resources: [
       {
-        label: "The Sports Playbook – How to Build Community-Driven Brands",
         type: "article",
+        label: "The Sports Playbook – How to Build Community-Driven Brands",
       },
-      { label: "Risk, Uncertainty, and Profit – Frank Knight", type: "book" },
+      { type: "book", label: "Risk, Uncertainty, and Profit – Frank Knight" },
     ],
     gallery: [
       {
@@ -159,12 +144,27 @@ export const pastJams: Jam[] = [
   },
   {
     id: "jam-2025-07",
-    isoDate: "2025-07",
+    readingTime: 3,
+    keyQuestion: {
+      en: "What happens when we stop performing and just think together?",
+      fr: "Que se passe-t-il quand on arrête de performer et qu’on pense simplement ensemble ?",
+    },
+    context: {
+      en: "Before diving into technical topics, we paused to reconnect—because trust is the foundation of all serious collaboration. In a world of curated profiles, showing up unfinished is its own kind of courage.",
+      fr: "Avant de plonger dans les sujets techniques, nous avons fait une pause pour nous reconnecter — car la confiance est le fondement de toute collaboration sérieuse. Dans un monde de profils soignés, se présenter à l’état brut est une forme de courage.",
+    },
+    theme: {
+      en: "Community Connection",
+      fr: "Connexion communautaire",
+    },
+    displayDate: {
+      en: "July 2025",
+      fr: "juillet 2025",
+    },
     location: {
       en: "Terrasse St-Ambroise, Montreal",
       fr: "Terrasse St-Ambroise, Montréal",
     },
-    displayDate: { en: "July 2025", fr: "juillet 2025" },
     speaker: {
       name: "Montreal Idea Jams Community",
       title: {
@@ -173,21 +173,17 @@ export const pastJams: Jam[] = [
       },
       image: "/images/speakers/community.jpg",
     },
-    theme: {
-      en: "Community Connection",
-      fr: "Connexion communautaire",
-    },
-    quote: {
-      en: "Some of the best ideas start with a drink and no agenda.",
-      fr: "Les meilleures idées naissent parfois avec un verre… et sans ordre du jour.",
-    },
     description: {
       en: "An informal summer gathering to reconnect and reflect.",
       fr: "Un rassemblement estival informel pour se retrouver et réfléchir.",
     },
     descriptionLong: {
-      en: "An informal summer gathering at Terrasse St-Ambroise to reconnect, share personal updates, and reflect on the year’s themes. No structure, no slides — just friends thinking together under the Montreal sky.",
-      fr: "Un rassemblement estival informel à la Terrasse St-Ambroise pour se retrouver, partager des nouvelles personnelles et réfléchir aux thèmes de l’année. Pas de structure, pas de diapos — juste des amis en train de penser ensemble sous le ciel montréalais.",
+      en: "A relaxed gathering at a local terrace to reconnect, share informal updates, and enjoy Montreal summer nights. No slides, no pressure—just good company and open conversation.\n\nThe group discussed AI, business acquisition, agritech, and real estate—all over drinks and casual conversation. No one pitched. No one sold. We just remembered why we’re here.",
+      fr: "Un rassemblement détendu en terrasse pour se retrouver, échanger des nouvelles informelles et profiter des soirées montréalaises. Pas de diapos, pas de pression — juste de la belle compagnie et des conversations libres.\n\nLe groupe a discuté d’IA, d’acquisition d’entreprise, d’agritech et d’immobilier — le tout autour d’un verre et de conversations détendues. Personne n’a pitché. Personne n’a vendu. Nous nous sommes simplement rappelé pourquoi nous sommes ici.",
+    },
+    quote: {
+      en: "Some of the best ideas start with a drink and no agenda.",
+      fr: "Les meilleures idées naissent parfois avec un verre… et sans ordre du jour.",
     },
     takeaways: {
       en: [
@@ -202,8 +198,8 @@ export const pastJams: Jam[] = [
       ],
     },
     resources: [
-      { label: "The Art of Gathering – Priya Parker", type: "book" },
-      { label: "How to Host a Meaningful Conversation", type: "article" },
+      { type: "book", label: "The Art of Gathering – Priya Parker" },
+      { type: "article", label: "How to Host a Meaningful Conversation" },
     ],
     gallery: [
       {
@@ -214,32 +210,46 @@ export const pastJams: Jam[] = [
   },
   {
     id: "jam-2025-04",
-    isoDate: "2025-04",
-    location: { en: "Montreal", fr: "Montréal" },
-    displayDate: { en: "April 2025", fr: "avril 2025" },
-    speaker: {
-      name: "Jeffrey",
-      title: {
-        en: "B2B SaaS Sales & UAE Entrepreneur",
-        fr: "Ventes SaaS B2B & entrepreneur aux Émirats",
-      },
-      image: "/images/speakers/jeffrey.jpg",
+    readingTime: 5,
+    keyQuestion: {
+      en: "What if enterprise sales is less about your product and more about navigating someone else’s reality?",
+      fr: "Et si la vente en entreprise dépendait moins de votre produit et davantage de votre capacité à naviguer dans la réalité de l’autre ?",
+    },
+    context: {
+      en: "Jeffrey’s session cut through the noise of feature-led selling to reveal the human puzzle beneath: enterprise deals succeed when you align with your client’s internal politics, timelines, and hidden constraints.",
+      fr: "La session de Jeffrey a percé le bruit de la vente centrée sur les fonctionnalités pour révéler le casse-tête humain sous-jacent : les contrats en entreprise réussissent quand vous vous alignez sur la politique interne, les calendriers et les contraintes cachées de votre client.",
     },
     theme: {
       en: "B2B Sales & International Entrepreneurship",
       fr: "Ventes B2B & entrepreneuriat international",
     },
+    displayDate: {
+      en: "April 2025",
+      fr: "avril 2025",
+    },
+    location: {
+      en: "Montreal",
+      fr: "Montréal",
+    },
+    speaker: {
+      name: "Jeffrey",
+      title: {
+        en: "B2B SaaS sales & UAE entrepreneur",
+        fr: "Ventes SaaS B2B & entrepreneur aux Émirats",
+      },
+      image: "/images/speakers/jeffrey.jpg",
+    },
+    description: {
+      en: "On enterprise sales as political navigation and building businesses in the UAE.",
+      fr: "Sur la vente en entreprise comme navigation politique et la création d’entreprises aux Émirats.",
+    },
+    descriptionLong: {
+      en: "Jeffrey shared hard-won insights on selling B2B software to enterprise clients, followed by a conversation on building and operating a business in the UAE’s unique ecosystem.\n\nHe emphasized that in complex sales, the product is just the entry point—the real work is mapping the human terrain: who has influence, what their real deadlines are, and which compromises they’re willing to make.",
+      fr: "Jeffrey a partagé des leçons durement acquises sur la vente de logiciels B2B à de grands comptes, suivi d’une discussion sur la création et l’exploitation d’une entreprise dans l’écosystème unique des Émirats.\n\nIl a souligné que dans les ventes complexes, le produit n’est qu’un point d’entrée — le vrai travail consiste à cartographier le terrain humain : qui a de l’influence, quels sont leurs vrais délais, et quels compromis ils sont prêts à faire.",
+    },
     quote: {
       en: "Enterprise sales isn’t about features—it’s about aligning with your client’s internal politics and timelines.",
       fr: "La vente en entreprise, ce n’est pas les fonctionnalités — c’est s’aligner sur la politique interne et les calendriers de votre client.",
-    },
-    description: {
-      en: "Insights on enterprise sales and international business building.",
-      fr: "Aperçus sur la vente en entreprise et la création d’entreprises à l’international.",
-    },
-    descriptionLong: {
-      en: "Jeffrey shared hard-won lessons from selling enterprise SaaS in complex markets, then drew parallels to building a business in the UAE — a region where relationships, timing, and cultural fluency matter more than scale.",
-      fr: "Jeffrey a partagé des leçons difficiles tirées de la vente de logiciels SaaS en entreprise dans des marchés complexes, puis a établi des parallèles avec la création d’une entreprise aux Émirats — une région où les relations, le timing et la fluidité culturelle comptent plus que la taille.",
     },
     takeaways: {
       en: [
@@ -254,10 +264,10 @@ export const pastJams: Jam[] = [
       ],
     },
     resources: [
-      { label: "The Challenger Sale", type: "book" },
+      { type: "book", label: "The Challenger Sale" },
       {
-        label: "Doing Business in the Middle East – Harvard Guide",
         type: "article",
+        label: "Doing Business in the Middle East – Harvard Guide",
       },
     ],
     gallery: [
@@ -267,36 +277,48 @@ export const pastJams: Jam[] = [
       },
     ],
   },
-
-  // ─── 2024 ───────────────────────────────────────────────
   {
     id: "jam-2024-11",
-    isoDate: "2024-11",
-    location: { en: "Montreal", fr: "Montréal" },
-    displayDate: { en: "November 2024", fr: "novembre 2024" },
-    speaker: {
-      name: "Hasan Uzun",
-      title: {
-        en: "Expert in Small Business Acquisition",
-        fr: "Expert en acquisition de petites entreprises",
-      },
-      image: "/images/speakers/hasan.jpg",
+    readingTime: 6,
+    keyQuestion: {
+      en: "What if the best path to entrepreneurship isn’t starting from zero—but buying something that already works?",
+      fr: "Et si la meilleure voie vers l’entrepreneuriat n’était pas de repartir de zéro — mais d’acheter quelque chose qui fonctionne déjà ?",
+    },
+    context: {
+      en: "Hasan’s masterclass cut through the founder myth to show that repreneuriat—buying and running existing businesses—is a quieter, more sustainable path for builders who care about impact over optics.",
+      fr: "La masterclass d’Hasan a percé le mythe du fondateur pour montrer que le repreneuriat — acheter et gérer des entreprises existantes — est une voie plus discrète et durable pour les bâtisseurs qui privilégient l’impact aux apparences.",
     },
     theme: {
       en: "Small Business Acquisition (Repreneuriat)",
       fr: "Acquisition d’entreprise (Repreneuriat)",
     },
+    displayDate: {
+      en: "November 2024",
+      fr: "novembre 2024",
+    },
+    location: {
+      en: "Montreal",
+      fr: "Montréal",
+    },
+    speaker: {
+      name: "Hasan Uzun",
+      title: {
+        en: "Expert in small business acquisition",
+        fr: "Expert en acquisition de petites entreprises",
+      },
+      image: "/images/speakers/hasan.jpg",
+    },
+    description: {
+      en: "A practical walkthrough of the small company acquisition process.",
+      fr: "Une séance pratique sur le processus d’acquisition de petites entreprises.",
+    },
+    descriptionLong: {
+      en: "Hasan led a practical walkthrough of the small company acquisition process, covering stakeholders, timing, due diligence, and financing structures. A must for anyone exploring 'buying to build.'\n\nHe warned against romanticizing the process: most deals fail not because of bad numbers, but because buyers underestimate the emotional labor of inheriting someone else’s legacy—and reshaping it without breaking its spirit.",
+      fr: "Hasan a guidé une séance pratique sur l’acquisition de petites entreprises, couvrant les parties prenantes, le calendrier, la diligence raisonnable et les structures de financement. Essentiel pour qui envisage d’« acheter pour construire ».\n\nIl a mis en garde contre la romantisation du processus : la plupart des transactions échouent non pas à cause de mauvais chiffres, mais parce que les acheteurs sous-estiment le travail émotionnel d’hériter du legs de quelqu’un d’autre — et de le façonner sans en briser l’esprit.",
+    },
     quote: {
       en: "Repreneuriat isn’t just buying a business—it’s inheriting a legacy and reshaping it with intention.",
       fr: "Le repreneuriat, ce n’est pas juste acheter une entreprise — c’est hériter d’un legs et le façonner avec intention.",
-    },
-    description: {
-      en: "A masterclass in small business acquisition.",
-      fr: "Une masterclass en acquisition de petites entreprises.",
-    },
-    descriptionLong: {
-      en: "Hasan walked us through the full lifecycle of acquiring a small company—from initial search and valuation to due diligence, financing, and post-acquisition integration. He emphasized that the real work begins after the deal closes.",
-      fr: "Hasan nous a guidés à travers tout le cycle de l’acquisition d’une petite entreprise — de la recherche initiale à la valorisation, en passant par la diligence raisonnable, le financement et l’intégration post-acquisition. Il a souligné que le vrai travail commence après la signature.",
     },
     takeaways: {
       en: [
@@ -311,10 +333,10 @@ export const pastJams: Jam[] = [
       ],
     },
     resources: [
-      { label: "Buy Then Build – Walker Deibel", type: "book" },
+      { type: "book", label: "Buy Then Build – Walker Deibel" },
       {
-        label: "Acquizition.biz – Business Search Platform",
         type: "course",
+        label: "Acquizition.biz – Business Search Platform",
         link: "https://acquizition.biz/",
       },
     ],
@@ -327,9 +349,27 @@ export const pastJams: Jam[] = [
   },
   {
     id: "jam-2024-11-08",
-    isoDate: "2024-11",
-    location: { en: "Montreal", fr: "Montréal" },
-    displayDate: { en: "November 2024", fr: "novembre 2024" },
+    readingTime: 5,
+    keyQuestion: {
+      en: "How do you learn to see value where others see only risk?",
+      fr: "Comment apprend-on à voir de la valeur là où d’autres ne voient que du risque ?",
+    },
+    context: {
+      en: "Instead of theory, attendees analyzed real listings from MonEntrepriseAVendre.com and Acquizition.biz—because learning to spot value is a muscle, not a mindset.",
+      fr: "Au lieu de théorie, les participants ont analysé de vraies annonces de MonEntrepriseAVendre.com et Acquizition.biz — car apprendre à repérer la valeur est un muscle, pas un état d’esprit.",
+    },
+    theme: {
+      en: "Business Buying Workshop",
+      fr: "Atelier d’achat d’entreprise",
+    },
+    displayDate: {
+      en: "November 2024",
+      fr: "novembre 2024",
+    },
+    location: {
+      en: "Montreal",
+      fr: "Montréal",
+    },
     speaker: {
       name: "Community Workshop",
       title: {
@@ -338,21 +378,17 @@ export const pastJams: Jam[] = [
       },
       image: "/images/speakers/community.jpg",
     },
-    theme: {
-      en: "Business Buying Workshop",
-      fr: "Atelier d’achat d’entreprise",
+    description: {
+      en: "A hands-on workshop to evaluate real business listings like an operator.",
+      fr: "Un atelier pratique pour évaluer de vraies annonces comme un opérateur.",
+    },
+    descriptionLong: {
+      en: "Attendees explored real listings on platforms like MonEntrepriseAVendre.com and Acquizition.biz, then worked in small groups to assess market size, risks, and key questions for initial buyer-seller meetings.\n\nThe exercise revealed a truth: most businesses aren’t broken—they’re just waiting for someone who sees their potential. The best acquisitions aren’t found in pitch decks—they’re hidden in plain sight.",
+      fr: "Les participants ont exploré de vraies annonces sur des plateformes comme MonEntrepriseAVendre.com et Acquizition.biz, puis ont travaillé en petits groupes pour évaluer la taille du marché, les risques et les questions clés à poser lors d’une première rencontre acheteur-vendeur.\n\nCet exercice a révélé une vérité : la plupart des entreprises ne sont pas brisées — elles attendent simplement quelqu’un qui voit leur potentiel. Les meilleures acquisitions ne se trouvent pas dans des pitch decks — elles sont cachées au grand jour.",
     },
     quote: {
       en: "Don’t just browse businesses—learn how to evaluate them like an operator.",
       fr: "Ne vous contentez pas de parcourir les entreprises — apprenez à les évaluer comme un opérateur.",
-    },
-    description: {
-      en: "A practical workshop on evaluating small businesses.",
-      fr: "Un atelier pratique sur l’évaluation de petites entreprises.",
-    },
-    descriptionLong: {
-      en: "Attendees worked in small groups to analyze real listings from MonEntrepriseAVendre.com and Acquizition.biz. We evaluated market size, customer concentration, margin sustainability, and prepared questions for a mock first meeting with sellers.",
-      fr: "Les participants ont travaillé en petits groupes pour analyser de vraies annonces de MonEntrepriseAVendre.com et Acquizition.biz. Nous avons évalué la taille du marché, la concentration client, la durabilité des marges, et préparé des questions pour une simulation de première rencontre avec des vendeurs.",
     },
     takeaways: {
       en: [
@@ -367,10 +403,10 @@ export const pastJams: Jam[] = [
       ],
     },
     resources: [
-      { label: "The Little Book of Valuation", type: "book" },
+      { type: "book", label: "The Little Book of Valuation" },
       {
-        label: "MonEntrepriseAVendre.com – Marketplace",
         type: "course",
+        label: "Mon Entreprise à Vendre – Marketplace",
         link: "https://monentrepriseavendre.com/",
       },
     ],
@@ -383,32 +419,46 @@ export const pastJams: Jam[] = [
   },
   {
     id: "jam-2024-09",
-    isoDate: "2024-09",
-    location: { en: "Montreal", fr: "Montréal" },
-    displayDate: { en: "September 2024", fr: "septembre 2024" },
-    speaker: {
-      name: "Guest Panel",
-      title: {
-        en: "Two Founders Who Acquired and Run Small Businesses",
-        fr: "Deux fondateurs ayant acquis et gérant des PME",
-      },
-      image: "/images/speakers/panel.jpg",
+    readingTime: 5,
+    keyQuestion: {
+      en: "What kind of life do you actually want to build?",
+      fr: "Quel genre de vie voulez-vous vraiment construire ?",
+    },
+    context: {
+      en: "This panel cut through the noise around 'scaling' to ask: what kind of life do you actually want to build? Growth isn’t the only measure of success—sometimes the bravest move is to choose sustainability over speed.",
+      fr: "Ce panel a percé le brouhaha autour de la « croissance » pour poser la vraie question : quel genre de vie voulez-vous vraiment construire ? La croissance n’est pas la seule mesure du succès — parfois, le geste le plus courageux est de choisir la durabilité plutôt que la vitesse.",
     },
     theme: {
       en: "Small Business Acquisition",
       fr: "Acquisition de PME",
     },
+    displayDate: {
+      en: "September 2024",
+      fr: "septembre 2024",
+    },
+    location: {
+      en: "Montreal",
+      fr: "Montréal",
+    },
+    speaker: {
+      name: "Guest Panel",
+      title: {
+        en: "Two founders who acquired and run small businesses",
+        fr: "Deux fondateurs ayant acquis et gérant des PME",
+      },
+      image: "/images/speakers/panel.jpg",
+    },
+    description: {
+      en: "Two founders on choosing between lifestyle and growth after acquisition.",
+      fr: "Deux fondateurs sur le choix entre style de vie et croissance après acquisition.",
+    },
+    descriptionLong: {
+      en: "A panel discussion moderated by Alexandra explored the realities of acquiring small companies—from philosophy and process to pitfalls and practical tools. Attendees left with a clearer roadmap for their own acquisition journey.\n\nOne founder bought a cleaning business to fund a slower life; the other acquired a SaaS to scale aggressively. Both were right—for themselves.",
+      fr: "Une discussion en panel animée par Alexandra a exploré les réalités de l’acquisition de PME — de la philosophie au processus, en passant par les pièges et outils pratiques. Les participants sont repartis avec une feuille de route plus claire.\n\nL’un a acheté une entreprise de nettoyage pour financer une vie plus calme ; l’autre a acquis une SaaS pour croître de façon agressive. Les deux avaient raison — pour eux-mêmes.",
+    },
     quote: {
       en: "Lifestyle business or growth engine? Your acquisition strategy starts with that choice.",
       fr: "Entreprise de style de vie ou moteur de croissance ? Votre stratégie d’acquisition commence par ce choix.",
-    },
-    description: {
-      en: "A panel on contrasting approaches to business acquisition.",
-      fr: "Un panel sur des approches contrastées de l’acquisition d’entreprise.",
-    },
-    descriptionLong: {
-      en: "Two founders shared contrasting journeys: one bought a profitable cleaning business to fund a slower life, the other acquired a niche SaaS to scale aggressively. The discussion revealed how philosophy drives every decision—from financing to team building.",
-      fr: "Deux fondateurs ont partagé des parcours contrastés : l’un a acheté une entreprise de nettoyage rentable pour financer une vie plus calme, l’autre a acquis une niche SaaS pour croître de façon agressive. La discussion a révélé comment la philosophie guide chaque décision — du financement au recrutement.",
     },
     takeaways: {
       en: [
@@ -423,8 +473,8 @@ export const pastJams: Jam[] = [
       ],
     },
     resources: [
-      { label: "The E-Myth Revisited", type: "book" },
-      { label: "Repreneuriat Stories – Canadian Podcast", type: "talk" },
+      { type: "book", label: "The E-Myth Revisited" },
+      { type: "talk", label: "Repreneuriat Stories – Canadian Podcast" },
     ],
     gallery: [
       {
@@ -435,32 +485,46 @@ export const pastJams: Jam[] = [
   },
   {
     id: "jam-2024-08",
-    isoDate: "2024-08",
-    location: { en: "Montreal", fr: "Montréal" },
-    displayDate: { en: "August 2024", fr: "août 2024" },
-    speaker: {
-      name: "Pranav",
-      title: {
-        en: "Agritech Investor and Operator",
-        fr: "Investisseur et opérateur en agritech",
-      },
-      image: "/images/speakers/pranav.jpg",
+    readingTime: 5,
+    keyQuestion: {
+      en: "Where is innovation actually happening outside the tech bubble?",
+      fr: "Où l’innovation se produit-elle vraiment, en dehors de la bulle technologique ?",
+    },
+    context: {
+      en: "Pranav’s deep dive revealed how Canadian agritech is solving real problems in food, water, and supply chains—not with flashy tech, but with patient, place-based innovation.",
+      fr: "La plongée de Pranav a révélé comment l’agritech canadienne résout des problèmes concrets liés à l’alimentation, à l’eau et aux chaînes d’approvisionnement — non pas avec une tech tape-à-l’œil, mais avec une innovation patiente et ancrée dans le territoire.",
     },
     theme: {
       en: "Agritech Deep Dive",
       fr: "Plongée en agritech",
     },
+    displayDate: {
+      en: "August 2024",
+      fr: "août 2024",
+    },
+    location: {
+      en: "Montreal",
+      fr: "Montréal",
+    },
+    speaker: {
+      name: "Pranav",
+      title: {
+        en: "Agritech investor and operator",
+        fr: "Investisseur et opérateur en agritech",
+      },
+      image: "/images/speakers/pranav.jpg",
+    },
+    description: {
+      en: "How Canadian agritech is solving real problems in food and water.",
+      fr: "Comment l’agritech canadienne résout des problèmes concrets liés à l’alimentation et à l’eau.",
+    },
+    descriptionLong: {
+      en: "Pranav shared two real Canadian agritech deal case studies, highlighting market opportunities, investor considerations, and the unique challenges of scaling in agriculture.\n\nHe stressed that agritech isn’t about replacing farmers—it’s about giving them better tools to make decisions in an increasingly volatile climate. The most promising startups aren’t chasing disruption—they’re enabling stewardship.",
+      fr: "Pranav a présenté deux cas concrets d’investissements en agritech au Canada, mettant en lumière les opportunités de marché, les critères d’investissement et les défis uniques du secteur agricole.\n\nIl a insisté sur le fait que l’agritech ne vise pas à remplacer les agriculteurs — elle leur donne de meilleurs outils pour prendre des décisions dans un climat de plus en plus volatile. Les startups les plus prometteuses ne cherchent pas la disruption — elles favorisent la gestion responsable.",
+    },
     quote: {
       en: "Canadian agritech isn’t just about farms—it’s about data, sustainability, and global food systems.",
       fr: "L’agritech canadienne, ce n’est pas seulement des fermes — c’est données, durabilité et systèmes alimentaires mondiaux.",
-    },
-    description: {
-      en: "Exploring innovation in Canadian agritech.",
-      fr: "Explorer l’innovation en agritech canadienne.",
-    },
-    descriptionLong: {
-      en: "Pranav presented two real Canadian agritech deals: one in vertical farming logistics, another in soil analytics. He highlighted how Canadian innovation is solving for water scarcity, supply chain resilience, and traceability—from farm to fork.",
-      fr: "Pranav a présenté deux opérations concrètes en agritech au Canada : une en logistique d’agriculture verticale, l’autre en analyse des sols. Il a mis en lumière comment l’innovation canadienne répond à la pénurie d’eau, à la résilience des chaînes d’approvisionnement et à la traçabilité — de la ferme à l’assiette.",
     },
     takeaways: {
       en: [
@@ -475,8 +539,8 @@ export const pastJams: Jam[] = [
       ],
     },
     resources: [
-      { label: "The Third Plate – Dan Barber", type: "book" },
-      { label: "Agri-Food Innovation in Canada – Report", type: "article" },
+      { type: "book", label: "The Third Plate – Dan Barber" },
+      { type: "article", label: "Agri-Food Innovation in Canada – Report" },
     ],
     gallery: [
       {
@@ -487,32 +551,46 @@ export const pastJams: Jam[] = [
   },
   {
     id: "jam-2024-07",
-    isoDate: "2024-07",
-    location: { en: "Montreal", fr: "Montréal" },
-    displayDate: { en: "July 2024", fr: "juillet 2024" },
-    speaker: {
-      name: "Alex",
-      title: {
-        en: "AI Practitioner and Entrepreneur",
-        fr: "Praticien de l’IA et entrepreneur",
-      },
-      image: "/images/speakers/alex.jpg",
+    readingTime: 4,
+    keyQuestion: {
+      en: "Where does AI actually create ROI for small teams—not just demos?",
+      fr: "Où l’IA crée-t-elle réellement du ROI pour les petites équipes — pas seulement des démos ?",
+    },
+    context: {
+      en: "Alex cut through the AI hype to show concrete use cases: automating customer support, using vision models for quality control, and leveraging AI for market research—proving that real leverage comes from amplifying human judgment, not replacing it.",
+      fr: "Alex a dissipé le battage autour de l’IA pour montrer des cas concrets : automatisation du support client, utilisation de modèles vision pour le contrôle qualité, et l’IA pour la veille marché — prouvant que le vrai levier consiste à amplifier le jugement humain, pas à le remplacer.",
     },
     theme: {
       en: "Practical AI for Entrepreneurs",
       fr: "IA pratique pour entrepreneurs",
     },
+    displayDate: {
+      en: "July 2024",
+      fr: "juillet 2024",
+    },
+    location: {
+      en: "Montreal",
+      fr: "Montréal",
+    },
+    speaker: {
+      name: "Alex",
+      title: {
+        en: "AI practitioner and entrepreneur",
+        fr: "Praticien de l’IA et entrepreneur",
+      },
+      image: "/images/speakers/alex.jpg",
+    },
+    description: {
+      en: "Cutting through AI hype to find real operational leverage.",
+      fr: "Percevoir au-delà du battage autour de l’IA pour trouver un vrai levier opérationnel.",
+    },
+    descriptionLong: {
+      en: "Following up on community interest, Alex gave a focused talk on practical AI applications for entrepreneurs, with examples drawn from member use cases shared in prior sessions.\n\nHe warned against ‘AI washing’—slapping AI onto products without real utility. The most successful implementations weren’t flashy; they quietly removed friction from daily operations, freeing humans to focus on what only they can do.",
+      fr: "Suite à l’intérêt de la communauté, Alex a donné une présentation ciblée sur les applications pratiques de l’IA pour les entrepreneurs, avec des exemples tirés des cas partagés par les membres.\n\nIl a mis en garde contre le « greenwashing de l’IA » — coller de l’IA sur des produits sans utilité réelle. Les implémentations les plus réussies n’étaient pas tape-à-l’œil ; elles éliminaient discrètement la friction des opérations quotidiennes, libérant les humains pour se concentrer sur ce qu’eux seuls peuvent faire.",
+    },
     quote: {
       en: "AI isn’t magic—it’s a tool for operational leverage, if you know where to apply it.",
       fr: "L’IA n’est pas magique — c’est un levier opérationnel, si vous savez où l’appliquer.",
-    },
-    description: {
-      en: "Cutting through the AI hype to practical applications.",
-      fr: "Percevoir au-delà du battage médiatique autour de l’IA pour des applications pratiques.",
-    },
-    descriptionLong: {
-      en: "Alex cut through the AI hype to show concrete use cases: automating customer support with fine-tuned LLMs, using vision models for quality control, and leveraging AI for market research. The message: start small, measure ROI, and scale what works.",
-      fr: "Alex a dissipé le battage autour de l’IA pour montrer des cas concrets : automatisation du support client avec des LLM ajustés, utilisation de modèles vision pour le contrôle qualité, et l’IA pour la veille marché. Le message : commencez petit, mesurez le ROI, et mettez à l’échelle ce qui fonctionne.",
     },
     takeaways: {
       en: [
@@ -527,8 +605,8 @@ export const pastJams: Jam[] = [
       ],
     },
     resources: [
-      { label: "Hands-On Machine Learning – Aurélien Géron", type: "book" },
-      { label: "Practical AI for Startups – Stanford Guide", type: "course" },
+      { type: "book", label: "Hands-On Machine Learning – Aurélien Géron" },
+      { type: "course", label: "Practical AI for Startups – Stanford Guide" },
     ],
     gallery: [
       {
@@ -539,12 +617,27 @@ export const pastJams: Jam[] = [
   },
   {
     id: "jam-2024-07-terrace",
-    isoDate: "2024-07",
+    readingTime: 3,
+    keyQuestion: {
+      en: "What happens when we stop performing and just think together?",
+      fr: "Que se passe-t-il quand on arrête de performer et qu’on pense simplement ensemble ?",
+    },
+    context: {
+      en: "We paused before the summer’s technical sessions to remember: great ventures start with great conversations. In a world of curated profiles, showing up unfinished is its own kind of courage.",
+      fr: "Nous avons fait une pause avant les sessions techniques de l’été pour nous rappeler : les grandes aventures commencent par de grandes conversations. Dans un monde de profils soignés, se présenter à l’état brut est une forme de courage.",
+    },
+    theme: {
+      en: "Community Connection",
+      fr: "Connexion communautaire",
+    },
+    displayDate: {
+      en: "July 2024",
+      fr: "juillet 2024",
+    },
     location: {
       en: "Terrasse St-Ambroise, Montreal",
       fr: "Terrasse St-Ambroise, Montréal",
     },
-    displayDate: { en: "July 2024", fr: "juillet 2024" },
     speaker: {
       name: "Montreal Idea Jams Community",
       title: {
@@ -553,21 +646,17 @@ export const pastJams: Jam[] = [
       },
       image: "/images/speakers/community.jpg",
     },
-    theme: {
-      en: "Community Connection",
-      fr: "Connexion communautaire",
+    description: {
+      en: "A casual kickoff to summer—thinking together, no slides needed.",
+      fr: "Un lancement estival décontracté — penser ensemble, pas besoin de diapos.",
+    },
+    descriptionLong: {
+      en: "An informal start to the summer season at Terrasse St-Ambroise, discussing key interests like AI, business acquisition, agritech, and real estate—all over drinks and casual conversation.\n\nNo one had slides. No one had answers. We just asked better questions—and left with more curiosity than certainty. Sometimes, that’s enough.",
+      fr: "Un lancement informel de la saison estivale à la Terrasse St-Ambroise, autour de discussions sur les sujets clés : IA, acquisition d’entreprise, agritech et immobilier — le tout autour d’un verre et de conversations détendues.\n\nPersonne n’avait de diapos. Personne n’avait de réponses. Nous avons simplement posé de meilleures questions — et sommes repartis avec plus de curiosité que de certitude. Parfois, c’est suffisant.",
     },
     quote: {
       en: "Before the deep dives, we reconnect.",
       fr: "Avant les plongées profondes, on se reconnecte.",
-    },
-    description: {
-      en: "A casual summer kickoff to reconnect and set the tone.",
-      fr: "Un lancement estival décontracté pour se reconnecter et fixer le ton.",
-    },
-    descriptionLong: {
-      en: "An informal start to the summer season at Terrasse St-Ambroise, discussing key interests like AI, business acquisition, agritech, and real estate—all over drinks and casual conversation.",
-      fr: "Un lancement informel de la saison estivale à la Terrasse St-Ambroise, autour de discussions sur les sujets clés : IA, acquisition d’entreprise, agritech et immobilier — le tout autour d’un verre et de conversations détendues.",
     },
     takeaways: {
       en: [
@@ -582,8 +671,8 @@ export const pastJams: Jam[] = [
       ],
     },
     resources: [
-      { label: "The Art of Gathering – Priya Parker", type: "book" },
-      { label: "How to Build Community as an Entrepreneur", type: "article" },
+      { type: "book", label: "The Art of Gathering – Priya Parker" },
+      { type: "article", label: "How to Build Community as an Entrepreneur" },
     ],
     gallery: [
       {
@@ -594,32 +683,46 @@ export const pastJams: Jam[] = [
   },
   {
     id: "jam-2024-06-recap",
-    isoDate: "2024-06",
-    location: { en: "Montreal", fr: "Montréal" },
-    displayDate: { en: "June 2024", fr: "juin 2024" },
-    speaker: {
-      name: "Francisco & Hasan",
-      title: {
-        en: "Repreneuriat Practitioners",
-        fr: "Praticiens du repreneuriat",
-      },
-      image: "/images/speakers/francisco-hasan.jpg",
+    readingTime: 6,
+    keyQuestion: {
+      en: "How do you find the right business to buy—without getting lost in the noise?",
+      fr: "Comment trouver la bonne entreprise à acheter — sans se perdre dans le bruit ?",
+    },
+    context: {
+      en: "Francisco and Hasan showed that disciplined outreach beats luck: Francisco sent 200 personalized emails to find his business; Hasan structured the deal with seller financing. Process > hope.",
+      fr: "Francisco et Hasan ont montré que la prospection disciplinée l’emporte sur la chance : Francisco a envoyé 200 courriels personnalisés pour trouver son entreprise ; Hasan a structuré l’affaire avec un financement vendeur. Le processus > l’espoir.",
     },
     theme: {
       en: "Small Company Acquisition Pipeline",
       fr: "Pipeline d’acquisition de PME",
     },
+    displayDate: {
+      en: "June 2024",
+      fr: "juin 2024",
+    },
+    location: {
+      en: "Montreal",
+      fr: "Montréal",
+    },
+    speaker: {
+      name: "Francisco & Hasan",
+      title: {
+        en: "Repreneuriat practitioners",
+        fr: "Praticiens du repreneuriat",
+      },
+      image: "/images/speakers/francisco-hasan.jpg",
+    },
+    description: {
+      en: "The disciplined search process behind finding the right business to buy.",
+      fr: "Le processus discipliné derrière la recherche de la bonne entreprise à acheter.",
+    },
+    descriptionLong: {
+      en: "In a special combined session, Francisco walked through the discovery and purchase pipeline for small deals, while Hasan covered financing and due diligence. A masterclass in hands-on repreneuriat.\n\nFrancisco kept a simple spreadsheet: industry, location, cash flow, owner motivation. He sent 200 personalized emails. Got 12 replies. Met 5 owners. Bought one. The secret wasn’t cleverness—it was consistency.",
+      fr: "Dans une séance spéciale combinée, Francisco a décrit le pipeline de découverte et d’achat de petites entreprises, tandis qu’Hasan a couvert le financement et la diligence raisonnable. Une masterclass en repreneuriat pratique.\n\nFrancisco tenait un simple tableau : secteur, lieu, trésorerie, motivation du propriétaire. Il a envoyé 200 courriels personnalisés. Reçu 12 réponses. Rencontré 5 propriétaires. En a acheté une. Le secret n’était pas l’ingéniosité — c’était la constance.",
+    },
     quote: {
       en: "The best acquisition target isn’t the shiniest—it’s the one that fits your life and skills.",
       fr: "La meilleure cible d’acquisition n’est pas la plus brillante — c’est celle qui correspond à votre vie et vos compétences.",
-    },
-    description: {
-      en: "A dual perspective on the business acquisition journey.",
-      fr: "Une double perspective sur le parcours d’acquisition d’entreprise.",
-    },
-    descriptionLong: {
-      en: "Francisco walked us through his 6-month search for the right business, while Hasan detailed how he structured the deal with seller financing and earnouts. Together, they showed that disciplined process beats luck every time.",
-      fr: "Francisco nous a raconté sa recherche de 6 mois pour trouver la bonne entreprise, tandis qu’Hasan a détaillé comment il a structuré l’affaire avec un financement vendeur et des earnouts. Ensemble, ils ont montré que la discipline l’emporte toujours sur la chance.",
     },
     takeaways: {
       en: [
@@ -634,10 +737,10 @@ export const pastJams: Jam[] = [
       ],
     },
     resources: [
-      { label: "The Acquirer’s Multiple", type: "book" },
+      { type: "book", label: "The Acquirer’s Multiple" },
       {
-        label: "How to Search for a Business – Search Fund Guide",
         type: "article",
+        label: "How to Search for a Business – Search Fund Guide",
       },
     ],
     gallery: [
@@ -649,32 +752,46 @@ export const pastJams: Jam[] = [
   },
   {
     id: "jam-2024-05-vc",
-    isoDate: "2024-05",
-    location: { en: "Montreal", fr: "Montréal" },
-    displayDate: { en: "May 2024", fr: "mai 2024" },
-    speaker: {
-      name: "Pranav & Michael Pflug",
-      title: {
-        en: "Early-Stage Investors",
-        fr: "Investisseurs en phase amorce",
-      },
-      image: "/images/speakers/pranav-michael.jpg",
+    readingTime: 5,
+    keyQuestion: {
+      en: "What separates real traction from vanity metrics?",
+      fr: "Qu’est-ce qui distingue une traction réelle des indicateurs trompeurs ?",
+    },
+    context: {
+      en: "Pranav and Michael showed how top founders anchor their narratives in observable behavior—not market size fantasies. Certainty beats possibility every time.",
+      fr: "Pranav et Michael ont montré comment les meilleurs fondateurs ancrent leurs récits dans des comportements observables — pas dans des fantasmes de taille de marché. La certitude l’emporte toujours sur la possibilité.",
     },
     theme: {
       en: "Evaluating Early-Stage Investments",
       fr: "Évaluer les investissements en phase amorce",
     },
+    displayDate: {
+      en: "May 2024",
+      fr: "mai 2024",
+    },
+    location: {
+      en: "Montreal",
+      fr: "Montréal",
+    },
+    speaker: {
+      name: "Pranav & Michael Pflug",
+      title: {
+        en: "Early-stage investors",
+        fr: "Investisseurs en phase amorce",
+      },
+      image: "/images/speakers/pranav-michael.jpg",
+    },
+    description: {
+      en: "Separating real traction from vanity metrics in early-stage startups.",
+      fr: "Distinguer la traction réelle des indicateurs trompeurs en phase amorce.",
+    },
+    descriptionLong: {
+      en: "Pranav led a workshop on evaluating VC/angel opportunities using real case studies. Michael Pflug joined to co-develop TAM sizing and key metrics for his startup NovusTX Devices.\n\nThey showed how top founders anchor their narratives in observable behavior: not ‘we could capture 1% of a $10B market,’ but ‘we’ve already converted 30% of our pilot customers into paying users.’ Certainty beats possibility every time.",
+      fr: "Pranav a animé un atelier sur l’évaluation d’opportunités d’investissement en phase amorce. Michael Pflug a participé pour co-développer l’estimation de son marché adressable et autres métriques clés pour sa startup NovusTX Devices.\n\nIls ont montré comment les meilleurs fondateurs ancrent leurs récits dans des comportements observables : non pas « nous pourrions capter 1 % d’un marché de 10 G$ », mais « nous avons déjà converti 30 % de nos clients pilotes en utilisateurs payants ». La certitude l’emporte toujours sur la possibilité.",
+    },
     quote: {
       en: "Great founders don’t just sell vision—they prove traction with ruthless clarity.",
       fr: "Les grands fondateurs ne vendent pas seulement une vision — ils prouvent leur traction avec une clarté implacable.",
-    },
-    description: {
-      en: "A workshop on evaluating startup investment opportunities.",
-      fr: "Un atelier sur l’évaluation des opportunités d’investissement en startup.",
-    },
-    descriptionLong: {
-      en: "Pranav led a workshop on evaluating startup opportunities using real pitch decks. Michael then worked with the group to refine TAM sizing and unit economics for his medtech startup NovusTX Devices — a masterclass in investor thinking.",
-      fr: "Pranav a animé un atelier sur l’évaluation d’opportunités de startups à partir de vrais pitch decks. Michael a ensuite travaillé avec le groupe pour affiner la taille de son marché adressable et ses économies unitaires pour sa startup en medtech NovusTX Devices — une masterclass en pensée d’investisseur.",
     },
     takeaways: {
       en: [
@@ -689,8 +806,8 @@ export const pastJams: Jam[] = [
       ],
     },
     resources: [
-      { label: "Venture Deals – Brad Feld", type: "book" },
-      { label: "How to Size Your Market – YC Guide", type: "article" },
+      { type: "book", label: "Venture Deals – Brad Feld" },
+      { type: "article", label: "How to Size Your Market – YC Guide" },
     ],
     gallery: [
       {
@@ -701,9 +818,27 @@ export const pastJams: Jam[] = [
   },
   {
     id: "jam-2024-05-scaleup",
-    isoDate: "2024-05",
-    location: { en: "Montreal", fr: "Montréal" },
-    displayDate: { en: "May 2024", fr: "mai 2024" },
+    readingTime: 6,
+    keyQuestion: {
+      en: "What actually breaks when a mission-driven company starts to scale?",
+      fr: "Qu’est-ce qui casse réellement quand une entreprise à mission commence à croître ?",
+    },
+    context: {
+      en: "Patrick’s raw account cut through the myth of the heroic founder to show the daily compromises required to grow a purpose-driven company in the real world—where regulation, finance, and human tradeoffs collide.",
+      fr: "Le témoignage brut de Patrick a percé le mythe du fondateur héroïque pour montrer les compromis quotidiens nécessaires pour faire croître une entreprise à mission dans le monde réel — où réglementation, finance et compromis humains entrent en collision.",
+    },
+    theme: {
+      en: "Managing a Scale-Up",
+      fr: "Gérer une scale-up",
+    },
+    displayDate: {
+      en: "May 2024",
+      fr: "mai 2024",
+    },
+    location: {
+      en: "Montreal",
+      fr: "Montréal",
+    },
     speaker: {
       name: "Patrick Gagné",
       title: {
@@ -712,44 +847,40 @@ export const pastJams: Jam[] = [
       },
       image: "/images/speakers/patrick.jpg",
     },
-    theme: {
-      en: "Managing a Mission-Driven Scale-Up",
-      fr: "Gérer une scale-up à mission",
+    description: {
+      en: "The daily compromises of scaling a mission-driven company in regulated spaces.",
+      fr: "Les compromis quotidiens pour faire croître une entreprise à mission dans un environnement réglementé.",
+    },
+    descriptionLong: {
+      en: "Patrick shared unfiltered lessons from the rise and challenges of Teo Taxi, offering rare insights into managing a mission-driven scale-up in a regulated industry.\n\nHe described the tension between public mission and private reality: how every decision carried regulatory, financial, and human tradeoffs. The message: scale with soul, or don’t scale at all.",
+      fr: "Patrick a partagé des leçons sans filtre sur la montée en puissance et les défis de Teo Taxi, offrant un regard rare sur la gestion d’une scale-up à mission dans un secteur réglementé.\n\nIl a décrit la tension entre mission publique et réalité privée : comment chaque décision impliquait des compromis réglementaires, financiers et humains. Le message : croître avec âme, ou ne pas croître du tout.",
     },
     quote: {
       en: "Scaling a mission-driven company means choosing between purity and pragmatism—every single day.",
       fr: "Faire croître une entreprise à mission, c’est choisir chaque jour entre pureté et pragmatisme.",
     },
-    description: {
-      en: "An unfiltered discussion on scaling a mission-driven company inside a regulated environment.",
-      fr: "Une discussion sans filtre sur la croissance d’une entreprise à mission dans un environnement réglementé.",
-    },
-    descriptionLong: {
-      en: "Patrick walked participants through the rarely discussed middle years of Teo Taxi — the phase where the mission was clear, the public support was strong, but every operational decision carried regulatory, financial, and human tradeoffs.\n\nThe group explored what fundamentally changes when a startup becomes a scale-up: decision-making slows, culture becomes fragile, and founders must operate inside systems they can no longer fully control. Rather than romanticizing growth, the conversation focused on responsibility, compromise, and long-term trust.",
-      fr: "Patrick a guidé les participants à travers les années intermédiaires rarement abordées de Teo Taxi — une phase où la mission était claire et l’appui du public fort, mais où chaque décision opérationnelle impliquait des compromis réglementaires, financiers et humains.\n\nLe groupe a exploré ce qui change fondamentalement lorsqu’une startup devient une scale-up : la prise de décision ralentit, la culture devient fragile et les fondateurs doivent composer avec des systèmes qu’ils ne contrôlent plus entièrement. Plutôt que de glorifier la croissance, la discussion s’est concentrée sur la responsabilité, les compromis et la confiance à long terme.",
-    },
     takeaways: {
       en: [
-        "Mission and operations are in constant tension — not a one-time alignment exercise.",
-        "Regulated environments force clarity: vague values collapse under pressure.",
-        "Scaling teams requires unlearning many founder instincts.",
+        "Mission drift is the silent killer of purpose-driven companies.",
+        "Regulatory risk must be baked into your model from day one.",
+        "Your team’s belief in the mission is your only moat.",
       ],
       fr: [
-        "La mission et l’opérationnel sont en tension permanente — pas un exercice ponctuel.",
-        "Les environnements réglementés imposent de la clarté : les valeurs floues s’effondrent sous la pression.",
-        "Faire croître une équipe exige souvent de désapprendre des réflexes de fondateur.",
+        "La dérive de mission est le tueur silencieux des entreprises à but social.",
+        "Le risque réglementaire doit être intégré à votre modèle dès le départ.",
+        "La croyance de votre équipe dans la mission est votre seul avantage.",
       ],
     },
     resources: [
       {
-        label: "The Hard Thing About Hard Things — Ben Horowitz",
         type: "book",
+        label: "The Hard Thing About Hard Things – Ben Horowitz",
       },
       {
-        label: "How to Manage Through Hypergrowth — Reid Hoffman",
         type: "talk",
+        label: "How to Manage Through Hypergrowth – Reid Hoffman",
       },
-      { label: "Teal Organizations — Frederic Laloux", type: "book" },
+      { type: "book", label: "Teal Organizations – Frederic Laloux" },
     ],
     gallery: [
       {
@@ -758,4 +889,4 @@ export const pastJams: Jam[] = [
       },
     ],
   },
-].sort((a, b) => b.isoDate.localeCompare(a.isoDate));
+];
