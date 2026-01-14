@@ -1,9 +1,11 @@
+// src/pages/JamDetailPage.tsx
+
 import { useParams, Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { pastJams } from "../data/pastJams";
 
-import SectionTitle from "../components/SectionTitle";
 import Section from "../components/Section";
+import SectionTitle from "../components/SectionTitle";
 import PaperCard from "../components/PaperCard";
 
 export default function JamDetailPage() {
@@ -15,6 +17,8 @@ export default function JamDetailPage() {
   const lang = forcedLang ?? (i18n.language.startsWith("fr") ? "fr" : "en");
 
   const jam = pastJams.find((j) => j.id === id);
+  const capitalizeFirst = (str: string) =>
+    str.charAt(0).toUpperCase() + str.slice(1);
 
   if (!jam) {
     return (
@@ -30,6 +34,10 @@ export default function JamDetailPage() {
       </main>
     );
   }
+
+  const [month, year] = jam.displayDate[lang].split(" ");
+  const formattedMonth = capitalizeFirst(month);
+  const gallery = jam.gallery ?? [];
 
   return (
     <main className="bg-stone-50 text-stone-900 min-h-screen">
@@ -60,7 +68,7 @@ export default function JamDetailPage() {
             <p className="text-stone-600 mt-2">{jam.speaker.title[lang]}</p>
 
             <p className="mt-4 text-sm text-stone-500">
-              {jam.displayDate[lang]} · {jam.location[lang]}
+              {jam.location[lang]} · {formattedMonth} · {year}
             </p>
 
             <span className="inline-block mt-4 px-3 py-1 text-xs rounded-full bg-stone-200 text-stone-700">
@@ -69,11 +77,22 @@ export default function JamDetailPage() {
           </div>
         </header>
 
-        {/* Description */}
+        {/* Key question */}
         <Section>
-          {jam.descriptionLong[lang].split("\n\n").map((p, i) => (
+          <p className="text-xl font-medium text-stone-800">
+            {jam.keyQuestion[lang]}
+          </p>
+          <br />
+          <br />
+          {/* Context */}
+          <p className="text-lg text-stone-600 leading-relaxed">
+            {jam.context[lang]}
+          </p>
+          <br />
+          {/* Description */}
+          {jam.descriptionLong[lang].split("\n\n").map((paragraph, i) => (
             <p key={i} className="text-lg text-stone-700 leading-relaxed mb-6">
-              {p}
+              {paragraph}
             </p>
           ))}
         </Section>
@@ -106,7 +125,7 @@ export default function JamDetailPage() {
         </Section>
 
         {/* Resources */}
-        {jam.resources && (
+        {jam.resources && jam.resources.length > 0 && (
           <Section>
             <SectionTitle>{t("jamDetail.resources")}</SectionTitle>
 
@@ -129,6 +148,8 @@ export default function JamDetailPage() {
                       <a
                         href={res.link}
                         className="text-sm text-stone-500 hover:text-stone-900"
+                        target="_blank"
+                        rel="noreferrer"
                       >
                         View →
                       </a>
@@ -141,11 +162,11 @@ export default function JamDetailPage() {
         )}
 
         {/* Gallery */}
-        {jam.gallery?.length > 0 && (
-          <Section className="mb-12">
+        {gallery.length > 0 && (
+          <Section>
             <img
-              src={jam.gallery[0].src}
-              alt={jam.gallery[0].alt}
+              src={gallery[0].src || "/images/jams/default.jpg"}
+              alt={gallery[0].alt || `Group photo — ${jam.displayDate[lang]}`}
               className="rounded-2xl w-full object-cover border border-stone-200 shadow-sm"
             />
           </Section>
@@ -165,6 +186,7 @@ export default function JamDetailPage() {
             <a
               href="https://tally.so/r/wogA4V"
               target="_blank"
+              rel="noreferrer"
               className="inline-block px-6 py-3 bg-stone-900 text-white rounded-xl text-sm
                          hover:bg-stone-800 transition active:translate-y-px"
             >
