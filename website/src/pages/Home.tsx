@@ -23,14 +23,14 @@ export default function Home() {
           <h1 className="font-serif text-3xl md:text-4xl leading-tight mb-4">
             {t("home.hero.title")}
           </h1>
-          <p className="text-lg text-stone-600 mb-8">
+          <p className="text-lg text-stone-600 mb-8 whitespace-pre-line">
             {t("home.hero.subtitle")}
           </p>
-
-          <button className="bg-stone-900 text-white px-7 py-3.5 rounded-xl text-sm hover:bg-stone-800 transition active:translate-y-px w-fit">
-            {t("home.hero.cta")}
-          </button>
-
+          <a href="https://tally.so/r/wogA4V" target="_blank">
+            <button className="bg-stone-900 text-white px-7 py-3.5 rounded-xl text-sm hover:bg-stone-800 transition active:translate-y-px w-fit">
+              {t("home.hero.cta")}
+            </button>
+          </a>
           <p className="text-xs font-bold text-stone-500 mt-5">
             {t("home.hero.footer")}
           </p>
@@ -124,20 +124,18 @@ export default function Home() {
                     </p>
                   </div>
 
-                  <button
-                    id="join"
-                    className="
-                mt-8 w-full
-                bg-stone-900 text-white
-                py-3.5 rounded-xl
-                text-sm
-                hover:bg-stone-800
-                transition
-                active:translate-y-px
-              "
-                  >
-                    {t("home.nextJam.cta")}
-                  </button>
+                  <a href="https://tally.so/r/wogA4V" target="_blank">
+                    <button
+                      id="join"
+                      className="mt-8 w-full bg-stone-900 text-white py-3.5 rounded-xl
+                    text-sm
+                    hover:bg-stone-800
+                    transition
+                    active:translate-y-px"
+                    >
+                      {t("home.nextJam.cta")}
+                    </button>
+                  </a>
 
                   <p className="text-xs text-stone-500 text-center mt-4">
                     {t("home.nextJam.rsvp")}
@@ -154,7 +152,7 @@ export default function Home() {
         <div className="lg:col-span-6">
           <h2 className="font-serif text-3xl mb-8">{t("home.why.title")}</h2>
 
-          <p className="text-xl font-medium text-stone-800 mb-8">
+          <p className="text-xl font-medium text-stone-800 mb-8 whitespace-pre-line">
             {t("home.why.thesis")}
           </p>
 
@@ -189,7 +187,7 @@ export default function Home() {
             {t("home.jamExperience.title")}
           </h2>
 
-          <div className="space-y-7 text-stone-600 text-lg leading-relaxed">
+          <div className="space-y-7 text-stone-600 text-lg leading-relaxed whitespace-pre-line">
             <p>{t("home.jamExperience.p1")}</p>
             <p>{t("home.jamExperience.p2")}</p>
             <p>{t("home.jamExperience.p3")}</p>
