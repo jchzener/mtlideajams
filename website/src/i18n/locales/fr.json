@@ -39,11 +39,11 @@
       "p3": "À la fin de la soirée, on repart avec moins de réponses —\nmais de meilleures questions."
     },
     "why": {
-      "title": "Pourquoi Montreal Idea Jams existe",
-      "thesis": "La plupart des espaces entrepreneuriaux optimisent la visibilité.\nNous, on optimise la réflexion.",
-      "p1": "MIJ est né du constat que les conversations les plus utiles ne se produisent presque jamais dans des espaces conçus pour pitcher, réseauter ou se mettre en valeur.",
-      "p2": "Nos meilleures rencontres arrivent quand on ralentit, qu’on partage quelque chose d’incomplet, et qu’on réfléchit ensemble — sans chercher à impressionner.",
-      "p3": "MIJ s’adresse à celles et ceux qui valorisent davantage la clarté que les applaudissements, et le progrès que le vernis."
+      "title": "Pourquoi Montreal Idea Jams ?",
+      "thesis": "La plupart des communautés entrepreneuriales optimisent pour la visibilité.\nNous optimisons pour la réflexion avant la construction.",
+      "p1": "L’entrepreneuriat est généralement abordé dans des espaces qui exigent de la confiance — conçus pour le pitch, le réseautage ou la mise en scène personnelle.",
+      "p2": "Mais les moments les plus déterminants arrivent plus tôt : lorsque les idées sont encore fragiles, les compromis flous et la trajectoire incertaine.",
+      "p3": "MIJ existe pour créer un espace où l’on peut réfléchir à voix haute, remettre en question les hypothèses, accepter l’incertitude et apprendre directement auprès de bâtisseurs expérimentés."
     },
     "credibility": {
       "title": "Qui était dans la salle",
@@ -73,12 +73,27 @@
     },
     "peopleImageAlt": "Des gens qui discutent, pas qui présentent",
     "past": {
-      "title": "Parmi nos invité·es précédents",
-      "viewAll": "Voir tous les Jams passés"
+      "title": "Des conversations passées qui ont façonné notre réflexion",
+      "subtitle": "Depuis avril 2024, Montreal Idea Jams rassemble fondateurs, opérateurs, investisseurs et bâtisseurs pour explorer à quoi ressemble vraiment l’entrepreneuriat — au-delà des pitchs et des métriques de croissance.",
+      "viewAll": "Voir toutes les Jams passées"
     },
     "who": {
       "title": "À qui s’adresse l’événement ?",
       "description": "Aux personnes curieuses de l’entrepreneuriat et qui envisagent sérieusement de sauter le pas — ou qui l’ont déjà fait."
+    },
+    "intent": {
+      "c1": {
+        "title": "Penser ensemble",
+        "body": "Ralentir les décisions complexes.\nTravailler les compromis, les hypothèses et les effets de second ordre — à voix haute, avec des gens qui veulent vraiment bien faire."
+      },
+      "c2": {
+        "title": "Affiner son jugement",
+        "body": "Confronter ses idées à la réalité. Remplacer les histoires par un raisonnement clair, et l’intuition par des modèles mentaux éprouvés dans de vrais marchés, de vraies équipes et de vraies contraintes."
+      },
+      "c3": {
+        "title": "Construire avec intention",
+        "body": "Étudier de vrais processus de construction.\nComment les produits, les équipes et les systèmes prennent forme — contraintes, séquençage, échecs, et leçons durement acquises."
+      }
     },
     "finalCta": {
       "title": "Venez pour la conversation.\nRestez pour la réflexion.",
@@ -86,8 +101,8 @@
     }
   },
   "pastJams": {
-    "title": "Montreal Idea Jams passés",
-    "subtitle": "18 mois de conversations sincères avec des fondatrices, opérateurs et bâtisseurs qui ont emprunté le chemin de l’entrepreneuriat.",
+    "title": "Conversations passées",
+    "subtitle": "Une liste de conversations en personne avec des fondateurs, opérateurs, investisseurs et bâtisseurs — centrées sur le travail réel, les vraies questions et les réalités de la gestion d’entreprise.",
     "backToUpcoming": "Retour au prochain Jams",
     "header": {
       "backToHome": "Montreal Idea Jams"
