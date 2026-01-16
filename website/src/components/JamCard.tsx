@@ -22,9 +22,9 @@ export default function JamCard({ jam }: JamCardProps) {
         group relative h-full
         bg-white rounded-2xl border border-stone-200
         p-6
-        transition-all duration-300 ease-out
+        transition-all duration-200 ease-out
         hover:-translate-y-1
-        hover:shadow-xl
+        hover:shadow-lg
       "
     >
       {/* Paper corner */}
@@ -68,7 +68,7 @@ export default function JamCard({ jam }: JamCardProps) {
           group-hover:opacity-100
         "
       >
-        ↗ Read session
+        Read session ↗
       </span>
     </article>
   );
