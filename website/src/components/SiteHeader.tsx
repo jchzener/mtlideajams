@@ -16,12 +16,12 @@ export default function SiteHeader({ backTo, backLabel }: Props) {
       {backTo ? (
         <Link
           to={backTo}
-          className="text-xs tracking-widest uppercase text-stone-500 hover:text-stone-900 transition"
+          className="text-xs tracking-widest uppercase text-stone-700 font-bold hover:text-stone-900 transition"
         >
           ← {backLabel}
         </Link>
       ) : (
-        <span className="text-xs tracking-widest uppercase text-stone-500">
+        <span className="text-xs tracking-widest uppercase text-stone-700 font-bold">
           Montreal Idea Jams
         </span>
       )}
