@@ -22,7 +22,7 @@ export default function HomePastJamsCollage() {
     <section className="max-w-7xl mx-auto px-6 py-24">
       <h2 className="font-serif text-3xl mb-10">{t("home.past.title")}</h2>
 
-      <p className="text-stone-600 text-lg mb-8 max-w-6xl">
+      <p className="text-stone-600 text-lg mb-12 max-w-md">
         {t("home.past.subtitle")}
       </p>
 
