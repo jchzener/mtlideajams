@@ -553,16 +553,16 @@ export const pastJams: Jam[] = [
     id: "jam-2024-07",
     readingTime: 4,
     keyQuestion: {
-      en: "Where does AI actually create ROI for small teams—not just demos?",
-      fr: "Où l’IA crée-t-elle réellement du ROI pour les petites équipes — pas seulement des démos ?",
+      en: "How is AI reshaping entire industries—and where should builders actually pay attention?",
+      fr: "Comment l’IA transforme-t-elle les industries — et où les bâtisseurs devraient-ils vraiment porter attention ?",
     },
     context: {
-      en: "Alex cut through the AI hype to show concrete use cases: automating customer support, using vision models for quality control, and leveraging AI for market research—proving that real leverage comes from amplifying human judgment, not replacing it.",
-      fr: "Alex a dissipé le battage autour de l’IA pour montrer des cas concrets : automatisation du support client, utilisation de modèles vision pour le contrôle qualité, et l’IA pour la veille marché — prouvant que le vrai levier consiste à amplifier le jugement humain, pas à le remplacer.",
+      en: "This Jam offered a high-level introduction to AI and machine learning, from foundational models and LLMs to generative AI. Rather than focusing on tools or demos, the session explored how AI is transforming entire industries—and what that means for builders and operators.",
+      fr: "Ce Jam proposait une introduction globale à l’IA et au machine learning, des modèles fondamentaux et LLM à l’IA générative. Plutôt que de se concentrer sur des outils ou des démos, la discussion portait sur la transformation des industries et ce que cela implique pour les bâtisseurs et opérateurs.",
     },
     theme: {
-      en: "Practical AI for Entrepreneurs",
-      fr: "IA pratique pour entrepreneurs",
+      en: "A Bird’s-Eye View of AI",
+      fr: "Une vue d’ensemble de l’IA",
     },
     displayDate: {
       en: "July 2024",
@@ -573,45 +573,52 @@ export const pastJams: Jam[] = [
       fr: "Montréal",
     },
     speaker: {
-      name: "Alex",
+      name: "Jean Hounkpe & Roy Eyono",
       title: {
-        en: "AI practitioner and entrepreneur",
-        fr: "Praticien de l’IA et entrepreneur",
+        en: "AI practitioners and builders",
+        fr: "Praticiens et bâtisseurs en IA",
       },
-      image: "/images/speakers/alex.jpg",
+      image: "/images/speakers/jeanandoy.jpg",
     },
     description: {
-      en: "Cutting through AI hype to find real operational leverage.",
-      fr: "Percevoir au-delà du battage autour de l’IA pour trouver un vrai levier opérationnel.",
+      en: "Understanding AI’s transformative power across industries.",
+      fr: "Comprendre le pouvoir transformateur de l’IA à travers les industries.",
     },
     descriptionLong: {
-      en: "Following up on community interest, Alex gave a focused talk on practical AI applications for entrepreneurs, with examples drawn from member use cases shared in prior sessions.\n\nHe warned against ‘AI washing’—slapping AI onto products without real utility. The most successful implementations weren’t flashy; they quietly removed friction from daily operations, freeing humans to focus on what only they can do.",
-      fr: "Suite à l’intérêt de la communauté, Alex a donné une présentation ciblée sur les applications pratiques de l’IA pour les entrepreneurs, avec des exemples tirés des cas partagés par les membres.\n\nIl a mis en garde contre le « greenwashing de l’IA » — coller de l’IA sur des produits sans utilité réelle. Les implémentations les plus réussies n’étaient pas tape-à-l’œil ; elles éliminaient discrètement la friction des opérations quotidiennes, libérant les humains pour se concentrer sur ce qu’eux seuls peuvent faire.",
+      en: "Titled *“A Bird’s Eye View of AI: Transformative Power Across Industries,”* this session introduced core AI concepts—from machine learning fundamentals to foundation models, LLMs, and generative AI.\n\nUsing concrete examples across business acquisitions, agriculture/agritech, and real estate, Alex and Roy illustrated how AI is already reshaping decision-making, operations, and competitive advantage. The focus was not on replacing humans, but on how AI augments judgment, scales insight, and changes what small teams can realistically build.",
+      fr: "Intitulée *« A Bird’s Eye View of AI : le pouvoir transformateur à travers les industries »*, cette session introduisait les concepts clés de l’IA — des bases du machine learning aux modèles fondamentaux, LLM et à l’IA générative.\n\nÀ travers des exemples concrets en reprise d’entreprise, agriculture/agritech et immobilier, Alex et Roy ont montré comment l’IA transforme déjà la prise de décision, les opérations et les avantages concurrentiels. L’accent n’était pas mis sur le remplacement des humains, mais sur l’amplification du jugement, la mise à l’échelle de l’intuition et l’élargissement de ce que de petites équipes peuvent réellement construire.",
     },
     quote: {
-      en: "AI isn’t magic—it’s a tool for operational leverage, if you know where to apply it.",
-      fr: "L’IA n’est pas magique — c’est un levier opérationnel, si vous savez où l’appliquer.",
+      en: "AI changes the scale of what small teams can do—but only if they understand the system they’re building with.",
+      fr: "L’IA change l’échelle de ce que les petites équipes peuvent accomplir — à condition de comprendre le système avec lequel elles construisent.",
     },
     takeaways: {
       en: [
-        "AI won’t replace founders—but founders using AI will replace those who don’t.",
-        "Your data moat matters more than your model.",
-        "Start with a workflow you already measure.",
+        "AI is a systems shift, not just a tooling upgrade.",
+        "Foundation models change who can build—and how fast.",
+        "The real advantage comes from combining domain knowledge with AI, not from models alone.",
       ],
       fr: [
-        "L’IA ne remplacera pas les fondateurs — mais les fondateurs qui l’utilisent remplaceront ceux qui ne le font pas.",
-        "Votre avantage data compte plus que votre modèle.",
-        "Commencez par un flux de travail que vous mesurez déjà.",
+        "L’IA est un changement de système, pas simplement un nouvel outil.",
+        "Les modèles fondamentaux redéfinissent qui peut construire — et à quelle vitesse.",
+        "Le véritable avantage vient de la combinaison entre expertise métier et IA, pas des modèles seuls.",
       ],
     },
     resources: [
       { type: "book", label: "Hands-On Machine Learning – Aurélien Géron" },
-      { type: "course", label: "Practical AI for Startups – Stanford Guide" },
+      {
+        type: "article",
+        label: "A Survey of Large Language Models – Stanford / arXiv",
+      },
+      {
+        type: "article",
+        label: "How Companies Are Actually Using Generative AI – McKinsey",
+      },
     ],
     gallery: [
       {
         src: "/images/jams/jam-2024-07-1.jpg",
-        alt: "AI discussion – July 2024",
+        alt: "Bird’s-eye view of AI discussion – July 2024",
       },
     ],
   },

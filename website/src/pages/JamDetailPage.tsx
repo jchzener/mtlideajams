@@ -41,25 +41,25 @@ export default function JamDetailPage() {
 
   return (
     <main className="bg-stone-50 text-stone-900 min-h-screen">
-      {/* Header */}
+      {/* HEADER */}
       <header className="max-w-3xl mx-auto px-6 pt-10">
         <Link
           to="/jams"
-          className="text-xs tracking-widest uppercase text-stone-500 hover:text-stone-900 transition"
+          className="text-xs tracking-widest uppercase text-stone-700 font-bold hover:text-stone-900 transition"
         >
           ← {t("jamDetail.header.backToAll")}
         </Link>
       </header>
 
-      <article className="max-w-3xl mx-auto px-6 py-20">
-        {/* Speaker intro */}
-        <header className="mb-20 flex flex-col md:flex-row gap-8">
+      <article className="max-w-3xl mx-auto px-6 py-24">
+        {/* SPEAKER INTRO */}
+        <header className="mb-24 flex flex-col md:flex-row gap-10">
           <img
             src={jam.speaker.image}
             alt={jam.speaker.name}
             onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.src = "/images/speakers/default.jpg";
+              (e.target as HTMLImageElement).src =
+                "/images/speakers/default.jpg";
             }}
             className="w-36 h-36 rounded-2xl object-cover border border-stone-200 shadow-sm"
           />
@@ -75,34 +75,31 @@ export default function JamDetailPage() {
               {jam.location[lang]} · {formattedMonth} · {year}
             </p>
 
-            <span className="inline-block mt-4 px-3 py-1 text-xs rounded-full bg-stone-200 text-stone-700">
+            <span className="inline-block mt-5 px-3 py-1 text-xs rounded-full bg-stone-200 text-stone-700">
               {jam.theme[lang]}
             </span>
           </div>
         </header>
 
-        {/* Key question */}
-        <Section>
-          <p className="text-xl font-medium text-stone-800">
+        {/* KEY QUESTION + CONTEXT */}
+        <Section className="pb-0">
+          <p className="text-xl md:text-2xl font-medium text-stone-800 mb-10">
             {jam.keyQuestion[lang]}
           </p>
-          <br />
-          <br />
-          {/* Context */}
-          <p className="text-lg text-stone-600 leading-relaxed">
+
+          <p className="text-lg text-stone-600 leading-relaxed mb-10">
             {jam.context[lang]}
           </p>
-          <br />
-          {/* Description */}
+
           {jam.descriptionLong[lang].split("\n\n").map((paragraph, i) => (
-            <p key={i} className="text-lg text-stone-700 leading-relaxed mb-6">
+            <p key={i} className="text-lg text-stone-700 leading-relaxed mb-8">
               {paragraph}
             </p>
           ))}
         </Section>
 
-        {/* Quote */}
-        <Section>
+        {/* QUOTE — EDITORIAL PAUSE */}
+        <Section className="pt-8">
           <PaperCard rotate={-1}>
             <blockquote className="font-serif text-xl md:text-2xl italic text-stone-700">
               “{jam.quote[lang]}”
@@ -110,7 +107,7 @@ export default function JamDetailPage() {
           </PaperCard>
         </Section>
 
-        {/* Takeaways */}
+        {/* TAKEAWAYS */}
         <Section>
           <SectionTitle>{t("jamDetail.takeaways")}</SectionTitle>
 
@@ -118,7 +115,7 @@ export default function JamDetailPage() {
             {jam.takeaways[lang].map((item, i) => (
               <li
                 key={i}
-                className="rounded-2xl bg-white p-5 border border-stone-200 shadow-sm"
+                className="rounded-2xl bg-white p-6 border border-stone-200 shadow-sm"
               >
                 <p className="text-stone-700 italic text-sm leading-relaxed">
                   {item}
@@ -128,17 +125,14 @@ export default function JamDetailPage() {
           </ul>
         </Section>
 
-        {/* Resources */}
+        {/* RESOURCES */}
         {jam.resources && jam.resources.length > 0 && (
           <Section>
             <SectionTitle>{t("jamDetail.resources")}</SectionTitle>
 
-            <div className="rounded-2xl bg-white border border-stone-200 p-6 space-y-4">
+            <div className="rounded-2xl bg-white border border-stone-200 p-6 space-y-5">
               {jam.resources.map((res, idx) => (
-                <div
-                  key={idx}
-                  className="flex items-start gap-3 text-stone-600"
-                >
+                <div key={idx} className="flex gap-4 text-stone-600">
                   <span className="mt-1">
                     {res.type === "book" && "📘"}
                     {res.type === "talk" && "🎧"}
@@ -165,7 +159,7 @@ export default function JamDetailPage() {
           </Section>
         )}
 
-        {/* Gallery */}
+        {/* GALLERY — VISUAL BREATH */}
         {gallery.length > 0 && (
           <Section>
             <img
@@ -181,8 +175,8 @@ export default function JamDetailPage() {
           </Section>
         )}
 
-        {/* Join next jam */}
-        <Section className="pt-12">
+        {/* JOIN NEXT JAM — CLOSING NOTE */}
+        <Section className="pt-16">
           <PaperCard rotate={1}>
             <h3 className="font-serif text-2xl mb-4">
               {t("jamDetail.joinNext.cta")}
@@ -204,8 +198,8 @@ export default function JamDetailPage() {
           </PaperCard>
         </Section>
 
-        {/* Back */}
-        <footer className="mt-20 text-right">
+        {/* BACK */}
+        <footer className="mt-24 text-right">
           <Link to="/jams" className="text-sm text-stone-500 hover:underline">
             ← {t("jamDetail.backToAll")}
           </Link>

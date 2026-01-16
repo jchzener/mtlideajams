@@ -3,11 +3,12 @@
 import heroImg from "/images/homepage/mij-hero.jpg";
 import convoImg from "/images/homepage/mij-conversation.jpg";
 import peopleImg from "/images/homepage/mij-people.jpg";
+
 import { useTranslation } from "react-i18next";
-import HomePastJamsCollage from "../components/HomePastJamsCollage";
 import SiteHeader from "../components/SiteHeader";
 import Section from "../components/Section";
 import PrimaryButton from "../components/PrimaryButton";
+import HomePastJamsCollage from "../components/HomePastJamsCollage";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -18,20 +19,23 @@ export default function Home() {
       <SiteHeader />
 
       {/* HERO */}
-      <section className="max-w-7xl mx-auto px-6 py-28 grid grid-cols-1 lg:grid-cols-12 gap-14">
+      <section className="max-w-7xl mx-auto px-6 py-28 grid grid-cols-1 lg:grid-cols-12 gap-20">
         <div className="lg:col-span-5 flex flex-col justify-center">
-          <h1 className="font-serif text-3xl md:text-4xl leading-tight mb-4">
+          <h1 className="font-serif text-3xl md:text-4xl leading-tight mb-4 whitespace-pre-line">
             {t("home.hero.title")}
           </h1>
-          <p className="text-lg text-stone-600 mb-8 whitespace-pre-line">
+
+          <p className="text-lg text-stone-600 mb-8 md:mr-8 whitespace-pre-line">
             {t("home.hero.subtitle")}
           </p>
-          <a href="https://tally.so/r/wogA4V" target="_blank">
+
+          <a href="https://tally.so/r/wogA4V" target="_blank" rel="noreferrer">
             <button className="bg-stone-900 text-white px-7 py-3.5 rounded-xl text-sm hover:bg-stone-800 transition active:translate-y-px w-fit">
               {t("home.hero.cta")}
             </button>
           </a>
-          <p className="text-xs font-bold text-stone-500 mt-5">
+
+          <p className="text-xs font-bold text-stone-500 mt-4">
             {t("home.hero.footer")}
           </p>
         </div>
@@ -56,18 +60,18 @@ export default function Home() {
           {/* Note */}
           <div
             className="
-            bg-stone-100
-            border border-stone-200
-            rounded-2xl
-            px-10 py-14 md:px-16
-            shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)]
-            -rotate-1
-          "
+              bg-stone-100
+              border border-stone-200
+              rounded-2xl
+              px-10 py-14 md:px-16
+              shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)]
+              -rotate-1
+            "
           >
             <div className="grid grid-cols-1 md:grid-cols-12 gap-14">
               {/* LEFT */}
               <div className="md:col-span-7">
-                <span className="text-xs uppercase tracking-widest text-stone-500">
+                <span className="text-xs uppercase tracking-widest font-bold text-stone-500">
                   {t("home.nextJam.eyebrow")}
                 </span>
 
@@ -82,6 +86,7 @@ export default function Home() {
                 <p className="text-sm text-stone-500 mb-1">
                   {t("home.nextJam.speakerIntro")}
                 </p>
+
                 <p className="text-xl font-medium">
                   {t("home.nextJam.speakerName")}
                   <span className="text-stone-500 font-normal">
@@ -124,14 +129,14 @@ export default function Home() {
                     </p>
                   </div>
 
-                  <a href="https://tally.so/r/wogA4V" target="_blank">
+                  <a
+                    href="https://tally.so/r/wogA4V"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <button
                       id="join"
-                      className="mt-8 w-full bg-stone-900 text-white py-3.5 rounded-xl
-                    text-sm
-                    hover:bg-stone-800
-                    transition
-                    active:translate-y-px"
+                      className="mt-8 w-full bg-stone-900 text-white py-3.5 rounded-xl text-sm hover:bg-stone-800 transition active:translate-y-px"
                     >
                       {t("home.nextJam.cta")}
                     </button>
@@ -198,17 +203,34 @@ export default function Home() {
       {/* PAST JAMS */}
       <HomePastJamsCollage />
 
+      {/* INTENT */}
+      <section className="max-w-7xl mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center md:text-left">
+          {["c1", "c2", "c3"].map((key) => (
+            <div key={key}>
+              <h3 className="font-serif text-3xl mb-6">
+                {t(`home.intent.${key}.title`)}
+              </h3>
+              <p className="text-stone-600 text-lg leading-relaxed whitespace-pre-line">
+                {t(`home.intent.${key}.body`)}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* FINAL CTA */}
       <Section className="py-20 text-center">
-        <div className="max-w-4xl mx-auto px-6">
-          <p className="text-stone-600 text-lg mb-10">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="text-stone-600 text-lg font-bold mb-4">
             {t("home.who.description")}
           </p>
 
           <h2 className="text-3xl font-semibold mb-6">
             {t("home.finalCta.title")}
           </h2>
-          <a href="https://tally.so/r/wogA4V" target="_blank">
+
+          <a href="https://tally.so/r/wogA4V" target="_blank" rel="noreferrer">
             <PrimaryButton>{t("home.finalCta.cta")}</PrimaryButton>
           </a>
         </div>

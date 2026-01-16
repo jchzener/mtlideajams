@@ -16,12 +16,12 @@ export default function PastJamsPage() {
       <SiteHeader backTo="/" backLabel={t("pastJams.header.backToHome")} />
 
       {/* Title */}
-      <Section className="py-16">
+      <Section className="pt-28 pb-4">
         <div className="max-w-7xl mx-auto px-6">
           <h1 className="font-serif text-3xl md:text-4xl">
             {t("pastJams.title")}
           </h1>
-          <p className="text-stone-600 mt-4 max-w-2xl">
+          <p className="text-stone-600 mt-6 max-w-md">
             {t("pastJams.subtitle")}
           </p>
         </div>
